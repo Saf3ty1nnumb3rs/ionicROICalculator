@@ -33,31 +33,34 @@ page-home {
   ion-content[padding] {
     ion-grid {
       padding-top: 0px;
+      height: 100%;
       ion-row {
         display: flex;
         justify-content: space-around;
+        height: 80%;
         ion-col.block {
           display: block;
           max-width: 360px;
+          max-height: 100%;
           p.head {
             font-family: "BebasNeue", sans-serif;
-            font-size: 36px;
+            font-size: 46px;
             text-align: start;
             line-height: 36px;
             margin: 14px 8px;
           }
           div.grad {
             width: 100%;
-            background-size: 100% 100px;
+            background-size: 360px 100px;
             background-repeat: no-repeat;
             background: linear-gradient(white, rgba(216, 216, 216, 0.04));
             div.flex {
               display: flex;
               justify-content: space-between;
               align-items: center;
-              width: 95%;
-              height: 44px;
+              height: 49px;
               margin: 0 auto;
+              width: 95%;
               border-bottom: .5px solid #666666;
               padding: 0 8px;
               div.content {
@@ -92,8 +95,11 @@ page-home {
               display: flex;
               justify-content: space-between;
               align-items: center;
-              height: 42px;
+              min-height: 49px;
               border-bottom: none;
+            }
+            div.flex.bottomless {
+                border-bottom: none;
             }
           }
           div.content.bold {
@@ -118,7 +124,7 @@ page-home {
             div.content.white {
               color: white;
               font-weight: bold;
-              font-size: 16px;
+              font-size: 14px;
             }
             ion-input.no-border.blue {
               border: none;
@@ -127,14 +133,66 @@ page-home {
               letter-spacing: 0px;
             }
           }
+          div.flex.total-bar#white {
+            background-color: #fff;
+            border: none;
+            border-bottom: none;
+            min-width: 350px;
+            margin: 0 auto;
+            height: auto;
+            border: 0.5px solid #43AAC5;
+          }
         }
       }
     }
+  }
+  div.flex.bold#select {
+      width: 69px;
+      height: 24px;
+      ion-select.select {
+          width: 69px;
+          .select-placeholder.select-text {
+            width: 69px;
+            height: 24px;
+          }
+      }
   }
   p.obl {
     font-size: 10px;
     font-style: oblique;
     padding: 0px 16px;
-    margin-top: -10px;
+    padding-bottom: 5px;
+    margin-top: -20px;
+  }
+  .narrow {
+      width: 50%;
+  }
+  .bottomless {
+      border-bottom: none;
+  }
+  .tight-squeeze {
+      padding: 0;
+      margin: 0;
+  }
+  .small {
+      font-size: 12px;
+  }
+  #bottom-box {
+      width: 100%;
+      margin-top: 70px;
+  }
+  .spacer {
+      margin-top: 20px;
+      width: 100%;
+  }
+  .left-spacer {
+    margin-top: 40px;
+    width: 100%;
+  }
+  ion-grid#bottom-right {
+      width: 100%;
+      background: #43AAC5;
+      max-height: 290px;
+      margin-top: 40px;
   }
 }
