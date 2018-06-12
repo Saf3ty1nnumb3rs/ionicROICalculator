@@ -1,18 +1,98 @@
 <ion-header>
-  <ion-navbar>
+  <div>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <!-- <ion-title>Home</ion-title> -->
+    <p> ROI Calculator</p>
+  </div>
+  <div class="right-header">
+    hydrafacial
+  </div>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="block">
+        <p class="head">Capital Equipment</p>
+        <div class="grad">
+          <div class="flex">
+            <div class="content">
+              HydraFacial Capital Investment
+            </div>
+            <div>
+              <ion-input class="input" type="text"></ion-input>
+            </div>
+          </div>
+          <div class="flex">
+            <div class="content">
+              Number of HydraFacial Machines
+            </div>
+            <div>
+              <ion-input class="input" type="text"></ion-input>
+            </div>
+          </div>
+          <div class="flex bold">
+            <div class="content">
+              Total Capital Investment
+            </div>
+            <div>
+              <ion-input class="no-border" type="text"></ion-input>
+            </div>
+          </div>
+          <div class="content bold">
+            Additional Discounts
+          </div>
+          <div class="flex bold">
+            <div class="content">
+              Section 179 Tax Discounts
+            </div>
+            <div>
+              <ion-input class="no-border" type="text"></ion-input>
+            </div>
+          </div>
+          <p class="obl">Note: Consult Your Tax Professional</p>
+          <div class="flex total-bar" id="bottomless">
+            <div class="content white">
+              Net Capital Investment
+            </div>
+            <div>
+              <ion-input class="no-border blue" type="text"></ion-input>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col class="block">
+        <p class="head">Treatment Revenue</p>
+        <div class="flex">
+          <div class="content">
+            Price per Treatment
+          </div>
+          <div>
+            <ion-input class="input" type="text"></ion-input>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col class="block">
+        <p class="head">investment return</p>
+        <div>
+          <div>Monthly Gross Revenue</div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        1 of 3
+      </ion-col>
+      <ion-col>
+        2 of 3
+      </ion-col>
+      <ion-col>
+        3 of 3
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>
