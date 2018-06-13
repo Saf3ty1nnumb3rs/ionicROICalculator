@@ -1,22 +1,20 @@
 <ion-header>
   <div>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <!-- <ion-title>Home</ion-title> -->
     <p> ROI Calculator</p>
   </div>
   <div class="right-header">
     hydrafacial
   </div>
 </ion-header>
-
+<!-- ############ Begin primary content ############ -->
 <ion-content padding>
   <ion-grid>
     <ion-row>
+      <!-- ###### Begin First Column ########################################### -->
       <ion-col class="block">
+        <!--  ####### Capital Equipment Block ###### -->
         <p class="head">Capital Equipment</p>
-        <div class="grad">
+        <form class="grad">
           <div class="flex">
             <div class="content">
               HydraFacial Capital Investment
@@ -61,10 +59,12 @@
               <ion-input class="no-border blue" type="text"></ion-input>
             </div>
           </div>
-        </div>
+        </form>
+        <!-- ###### End Capital Equipment Block ###### -->
+        <!--  ###### Begin Treatment Volume Block ###### -->
         <div class="left-spacer">
           <p class="head">Treatment Volume</p>
-          <div class="grad">
+          <form class="grad">
             <div class="flex">
               <div class="content">
                 Typical Patients/Clients per Day
@@ -105,13 +105,15 @@
                 <ion-input class="no-border blue" type="text"></ion-input>
               </div>
             </div>
-          </div>
+          </form>
         </div>
+        <!-- ###### End Treatment Volume Block ###### -->
       </ion-col>
+      <!-- ######### End First Column ################# Begin Second Column ######### -->
       <ion-col class="block">
+        <!-- ###### Begin Treatment Revenue Block ####### -->
         <p class="head">Treatment Revenue</p>
-
-        <div class="grad">
+        <form class="grad">
           <div class="flex">
             <div class="content">
               Price Per Treatment
@@ -170,12 +172,12 @@
               </div>
             </div>
           </div>
-
-        </div>
-
+        </form>
+        <!-- ###### End Treatment Revenue Block ######  -->
+        <!--  ###### Begin Costs Per Treatment Block ###### -->
         <div id="bottom-box">
           <p class="head bottom">Costs per Treatment</p>
-          <div class="grad">
+          <form class="grad">
             <div class="flex">
               <div class="content">
                 <p class="tight-squeeze">Consumable Costs</p>
@@ -188,19 +190,21 @@
             <div class="flex bold">
               <div class="content">
                 <p class="tight-squeeze">Booster Costs</p>
-                <p class="tight-squeeze small">((Serums or Lymphatic/Light) )</p>
-
+                <p class="tight-squeeze small">(Serums or Lymphatic/Light)</p>
               </div>
               <div>
                 <ion-input class="no-border" type="text"></ion-input>
               </div>
             </div>
-          </div>
+          </form>
         </div>
+        <!--  ###### End Costs Per Treatment Block ###### -->
       </ion-col>
+      <!-- ######### End Second Column ################# Begin Third Column ######### -->
       <ion-col class="block">
-        <p class="head">investment return</p>
-        <div class="grad">
+        <!--  ###### Begin Investment Return Block ###### -->
+        <p class="head">Investment Return</p>
+        <form class="grad">
           <div class="flex">
             <div class="content">
               Monthly Gross Revenue
@@ -235,7 +239,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </form>
+        <!--  ###### End Investment Return Block ###### -->
+        <!--  ###### Begin Bleu Box Block ###### -->
         <ion-grid id="bottom-right">
           <ion-row class="tight-box top">
             <ion-col class="square left">
@@ -258,7 +264,7 @@
             </ion-col>
           </ion-row>
         </ion-grid>
-        <div class="grad" id="payoff">
+        <form class="grad" id="payoff">
           <div class="flex">
             <div class="content bleu">
               Monthly To Payoff
@@ -267,7 +273,7 @@
               <ion-input class="no-border bleu" type="text"></ion-input>
             </div>
           </div>
-          <div class="flex bold">
+          <div class="flex bold bottomless">
             <div class="content bleu">
               Treatments To Payoff
             </div>
@@ -275,12 +281,10 @@
               <ion-input class="no-border bleu" type="text"></ion-input>
             </div>
           </div>
-        </div>
-
-        </ion-col>
+        </form>
+        <!--  ###### End Bleu Box Block ###### -->
+      </ion-col>
+      <!-- ######### End Third Column ######################################## -->
     </ion-row>
-
   </ion-grid>
-
-  <!-- <button ion-button secondary menuToggle>Toggle Menu</button> -->
 </ion-content>
