@@ -29,7 +29,8 @@ page-home {
     ion-grid {
       padding-top: 0px;
       height: 100%;
-      ion-row {
+      ion-row.primary {
+        margin-top: 80px;
         display: flex;
         justify-content: space-around;
         height: 80%;
@@ -49,12 +50,12 @@ page-home {
             width: 100%;
           }
           .left-spacer {
-            margin-top: 40px;
+            margin-top: 70px;
             width: 100%;
           }
           #bottom-box {
             width: 100%;
-            margin-top: 90px;
+            margin-top: 126px;
           }
         //   END G/C/R STYLES ///////////////////////////////////////////////
         //   PRIMARY BOX STYLES /////////////////////////////////////////////
@@ -112,6 +113,7 @@ page-home {
               ion-input.no-border {
                 border: none;
                 font-weight: bold;
+                background: transparent;
               }
             }
             div.flex.bold {
@@ -170,6 +172,12 @@ page-home {
           }
         }
       }
+      ion-row.primary:after {
+        content: " ";
+        margin: 0 auto;
+        width: 95%;
+        border-bottom: 0.5px solid #333;
+    }
     }
   }
 //   END PRIMARY BOX STYLES ///// 
@@ -179,7 +187,7 @@ page-home {
     width: 100%;
     background: #43AAC5;
     max-height: 290px;
-    margin-top: 40px;
+    margin-top: 50px;
     ion-row.tight-box {
       margin: 0 auto;
       width: 100%;
