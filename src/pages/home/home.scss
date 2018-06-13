@@ -208,32 +208,52 @@ page-home {
       height: 50%;
       ion-col.square {
         width: 50%;
-        height: 95%;
+        height: 100%;
         padding: 0;
         margin: 0px auto;
       }
       ion-col.square.left {
         border-right: 0.5px solid #fff;
       }
+      ion-col.square.left-bottom, ion-col.square.right-bottom {
+        margin-bottom: 30px;
+        height: 90%;
+        p.box-head {
+            margin: 0 auto;
+            line-height: 19px;
+            padding-top: 20px;
+            font-family: "Helvetica", sans-serif;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+            height: 40%;
+          }
+        p.box-bottom {
+              padding-top: 14px;
+         }
+      }
+      ion-col.square.right-top, ion-col.square.left-top {
+        margin-bottom: 0;
+        margin-top: 20px;
+        height: 88%;
+        p.box-head {
+            margin: 0 auto;
+            line-height: 19px;
+            padding-top: 5px;
+            font-family: "Helvetica", sans-serif;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+            height: 40%;
+          }
+      }
     }
     ion-row.tight-box.top:after {
       content: " ";
       margin: 0 auto;
-      width: 80%;
+      width: 95%;
       border-bottom: 0.5px solid #fff;
-    }
-    p.box-head {
-      margin: 0 auto;
-      line-height: 19px;
-      padding-top: 15px;
-      font-family: "Helvetica", sans-serif;
-      font-size: 18px;
-      color: #fff;
-      text-align: center;
-      height: 40%;
-    }
-    p.box-head.b-right {
-      padding-top: 20px;
+      height: 0;
     }
     p.box-bottom {
       font-family: "BebasNeue", sans-serif;
@@ -243,6 +263,9 @@ page-home {
       text-align: center;
       padding: 0;
       margin: 0;
+    }
+    p.box-head.right {
+        width: 60%;
     }
   }
   form.grad#payoff {
