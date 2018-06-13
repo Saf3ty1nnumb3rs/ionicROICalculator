@@ -5,7 +5,13 @@ page-home {
     color: #C85EAD;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 104px;
+    img.head-img {
+        width: 212px;
+        height: 47px;
+        margin-right: 2vw;
+    }
     div {
       display: inline-flex;
       margin-left: 4.2vw;
@@ -25,17 +31,41 @@ page-home {
     }
   } //END HEADER STYLES //////////BEGIN GRID/COLUMN/ROW STYLES/////////////////////
   ion-content[padding] {
+      img {
+          width: 50px;
+          height: 50px;
+      }
+      .foot-img {
+          position: absolute;
+          bottom: 4.5vh;
+          right: 50%;
+          left: 50%;
+      }
+      img.foot-img:before {
+        content: " ";
+        margin: 0 auto;
+        width: 30%;
+        border-bottom: 0.5px solid #000;
+        height: 0;
+      }
+      img.foot-img:after {
+        content: " ";
+        margin: 0 auto;
+        width: 30%;
+        border-bottom: 0.5px solid #000;
+        height: 0;
+      }
     ion-grid {
       padding-top: 0px;
       height: 100%;
       ion-row.primary {
-        margin-top: 80px;
+        margin-top: 50px;
         display: flex;
         justify-content: space-around;
         height: 80%;
         ion-col.block {
           display: block;
-          max-width: 360px;
+          max-width: 420px;
           max-height: 100%;
           p.head {
             font-family: "BebasNeue", sans-serif;
@@ -75,15 +105,25 @@ page-home {
               align-items: center;
               height: 49px;
               margin: 0 auto;
-              width: 95%;
+              width: 97%;
               border-bottom: .5px solid #666666;
-              padding: 0 8px;
+              padding:3px 8px;
               .narrow {
                 width: 50%;
               }
               .tight-squeeze {
                 padding: 0;
                 margin: 0;
+              }
+              .end {
+                  justify-content: flex-end;
+                  width: 33%;
+                  margin: 0;
+                  border-bottom: none;
+                  height: auto;
+              }
+              .white {
+                  color: #fff;
               }
               div.content {
                 font-family: "Helvetica", sans-serif;
@@ -95,9 +135,10 @@ page-home {
                 background: #fff;
                 color: #666666;
                 border: 0.5px solid #666666;
-                width: 69px;
+                max-width: 60px;
                 height: 24px;
                 margin: 0;
+                margin-left: 2px;
                 font-size: 14px;
                 line-height: 17px;
                 padding-top: 3px;
@@ -190,7 +231,14 @@ page-home {
       ion-row.primary:after {
         content: " ";
         margin: 0 auto;
-        width: 95%;
+        margin-left: 20px;
+        width: 48%;
+        border-bottom: 0.5px solid #333;
+      }
+      ion-row.primary.second:after {
+        content: " ";
+        margin: 80px auto;
+        width: 90%;
         border-bottom: 0.5px solid #333;
       }
     }
@@ -294,6 +342,9 @@ page-home {
         height: 100%;
         font-size: 28px;
         line-height: 29px;
+        color: #43AAC5;
+      }
+      input{
         color: #43AAC5;
       }
     }

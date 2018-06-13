@@ -3,13 +3,13 @@
     <p> ROI Calculator</p>
   </div>
   <div class="right-header">
-    hydrafacial
+    <img class="head-img" src="../assets/imgs/hydralogo.png" alt="hydrafacial">
   </div>
 </ion-header>
 <!-- ############ Begin primary content ############ -->
 <ion-content padding>
   <ion-grid>
-    <ion-row class="primary">
+    <ion-row class="primary second">
       <!-- ###### Begin First Column ########################################### -->
       <ion-col class="block">
         <!--  ####### Capital Equipment Block ###### -->
@@ -19,23 +19,26 @@
             <div class="content">
               HydraFacial Capital Investment
             </div>
-            <div>
-              <ion-input class="input" type="text"></ion-input>
+            <div class="flex end">
+              $
+              <ion-input class="input" type="number" [(ngModel)]="hydraCI" name="hydraCI"></ion-input>
             </div>
           </div>
           <div class="flex">
             <div class="content">
               Number of HydraFacial Machines
             </div>
-            <div>
-              <ion-input class="input" type="text"></ion-input>
+            <div class="flex end">
+              $
+              <ion-input class="input" type="number" [(ngModel)]="hydraMach" name="hydraMach"></ion-input>
             </div>
           </div>
           <div class="flex bold">
             <div class="content">
               Total Capital Investment
             </div>
-            <div>
+            <div class="flex end">
+              $
               <ion-input class="no-border" type="text"></ion-input>
             </div>
           </div>
@@ -46,7 +49,8 @@
             <div class="content">
               Section 179 Tax Discounts
             </div>
-            <div>
+            <div class="flex end">
+              $
               <ion-input class="no-border" type="text"></ion-input>
             </div>
           </div>
@@ -55,7 +59,8 @@
             <div class="content white">
               Net Capital Investment
             </div>
-            <div>
+            <div class="flex end white">
+              $
               <ion-input class="no-border blue" type="text"></ion-input>
             </div>
           </div>
@@ -69,7 +74,8 @@
               <div class="content">
                 Typical Patients/Clients per Day
               </div>
-              <div>
+              <div class="flex end">
+                $
                 <ion-input class="input" type="text"></ion-input>
               </div>
             </div>
@@ -77,7 +83,8 @@
               <div class="content">
                 Percent of Patients/Clients That Could Use HydraFacial
               </div>
-              <div>
+              <div class="flex end">
+                $
                 <ion-input class="input" type="text"></ion-input>
               </div>
             </div>
@@ -85,7 +92,8 @@
               <div class="content narrow">
                 Projected HydraFacial Treatments per Day
               </div>
-              <div>
+              <div class="flex end">
+                $
                 <ion-input class="input" type="text"></ion-input>
               </div>
             </div>
@@ -93,7 +101,8 @@
               <div class="content">
                 Days of Regular Operation
               </div>
-              <div>
+              <div class="flex end">
+                $
                 <ion-input class="input" type="text"></ion-input>
               </div>
             </div>
@@ -101,8 +110,8 @@
               <div class="content white">
                 Total Weekly Treatments
               </div>
-              <div>
-                <ion-input class="no-border blue" type="text"></ion-input>
+              <div class="flex end white">
+                  $<ion-input class="no-border blue" type="text"></ion-input>
               </div>
             </div>
           </form>
@@ -157,7 +166,7 @@
                 <option>Small</option>
                 <option>Medium</option>
                 <option>Large</option>
-                
+
               </select>
             </div>
           </div>
@@ -294,5 +303,6 @@
       </ion-col>
       <!-- ######### End Third Column ######################################## -->
     </ion-row>
+    <img class="foot-img" src="../assets/imgs/Heyedra@2x.png" alt="i" />
   </ion-grid>
 </ion-content>
