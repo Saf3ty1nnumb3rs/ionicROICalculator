@@ -1,5 +1,5 @@
 page-home {
-    // HEADER STYLES///////////////////////////////
+  // HEADER STYLES///////////////////////////////
   ion-header {
     background: #000;
     color: #C85EAD;
@@ -23,8 +23,7 @@ page-home {
       margin-right: 2vw;
       font-size: 53px;
     }
-  }
-  //END HEADER STYLES //////////BEGIN GRID/COLUMN/ROW STYLES/////////////////////
+  } //END HEADER STYLES //////////BEGIN GRID/COLUMN/ROW STYLES/////////////////////
   ion-content[padding] {
     ion-grid {
       padding-top: 0px;
@@ -56,21 +55,20 @@ page-home {
           #bottom-box {
             width: 100%;
             margin-top: 126px;
-          }
-        //   END G/C/R STYLES ///////////////////////////////////////////////
-        //   PRIMARY BOX STYLES /////////////////////////////////////////////
+          } //   END G/C/R STYLES ///////////////////////////////////////////////
+          //   PRIMARY BOX STYLES /////////////////////////////////////////////
           form.grad {
             width: 100%;
             background-size: 360px 100px;
             background-repeat: no-repeat;
             background: linear-gradient(white, rgba(216, 216, 216, 0.04));
             p.obl {
-                font-size: 10px;
-                font-style: oblique;
-                padding: 0px 16px;
-                padding-bottom: 5px;
-                margin-top: -20px;
-              }
+              font-size: 10px;
+              font-style: oblique;
+              padding: 0px 16px;
+              padding-bottom: 5px;
+              margin-top: -20px;
+            }
             div.flex {
               display: flex;
               justify-content: space-between;
@@ -86,7 +84,7 @@ page-home {
               .tight-squeeze {
                 padding: 0;
                 margin: 0;
-                }
+              }
               div.content {
                 font-family: "Helvetica", sans-serif;
                 font-size: 14px;
@@ -124,10 +122,27 @@ page-home {
               border-bottom: none;
             }
             .small {
-                font-size: 12px;
-              }
+              font-size: 12px;
+            }
             div.flex.bottomless {
               border-bottom: none;
+              .ion-input-select,
+              select {
+                -webkit-appearance: none;
+                background-repeat: no-repeat;
+                background-color: rgba(0, 0, 0, 0);
+                border: thin solid #dddddd;
+                font-weight: 300;
+                vertical-align: middle;
+                color: #333;
+                padding: 0 7px;
+                overflow: hidden;
+                box-sizing: border-box;
+                text-align: center;
+                background: transparent;
+                width: 69px;
+                height: 24px;
+              }
             }
           }
           div.content.bold {
@@ -177,12 +192,11 @@ page-home {
         margin: 0 auto;
         width: 95%;
         border-bottom: 0.5px solid #333;
-    }
+      }
     }
   }
-//   END PRIMARY BOX STYLES ///// 
-  
-//   BOTTOM RIGHT BLUE BOX GRID STYLES ////////////////////////////////////////
+  //   END PRIMARY BOX STYLES ///// 
+  //   BOTTOM RIGHT BLUE BOX GRID STYLES ////////////////////////////////////////
   ion-grid#bottom-right {
     width: 100%;
     background: #43AAC5;
@@ -243,7 +257,7 @@ page-home {
       height: auto;
     }
     div.flex.bold.bottomless {
-        border-bottom: none;
+      border-bottom: none;
     }
     ion-input.no-border.bleu.input.input-md {
       height: 40px;
