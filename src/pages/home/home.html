@@ -29,7 +29,7 @@
               Number of HydraFacial Machines
             </div>
             <div class="non-dollar">
-              <ion-input class="input" type="number" [(ngModel)]="hydraMach" name="hydraMach"></ion-input>
+              <ion-input class="input" type="number" (blur)="capitalInvestment()"[(ngModel)]="hydraMach" name="hydraMach"></ion-input>
             </div>
           </div>
           <div class="flex bold">
