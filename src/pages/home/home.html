@@ -28,8 +28,7 @@
             <div class="content">
               Number of HydraFacial Machines
             </div>
-            <div class="flex end">
-              $
+            <div class="non-dollar">
               <ion-input class="input" type="number" [(ngModel)]="hydraMach" name="hydraMach"></ion-input>
             </div>
           </div>
@@ -39,7 +38,7 @@
             </div>
             <div class="flex end">
               $
-              <ion-input class="no-border" type="text"></ion-input>
+              <div *ngIf="totalCI" class="no-border">{{totalCI}}</div>
             </div>
           </div>
           <div class="content bold">
@@ -74,8 +73,7 @@
               <div class="content">
                 Typical Patients/Clients per Day
               </div>
-              <div class="flex end">
-                $
+              <div class="non-dollar">
                 <ion-input class="input" type="text"></ion-input>
               </div>
             </div>
@@ -92,8 +90,7 @@
               <div class="content narrow">
                 Projected HydraFacial Treatments per Day
               </div>
-              <div class="flex end">
-                $
+              <div class="non-dollar">
                 <ion-input class="input" type="text"></ion-input>
               </div>
             </div>
