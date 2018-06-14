@@ -74,7 +74,7 @@
                 Typical Patients/Clients per Day
               </div>
               <div class="non-dollar">
-                <ion-input class="input" type="number" (ionBlur)="treatmentVolume()" [(ngModel)]="clientsPerDiem" name="clientsPerDiem"></ion-input>
+                <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="clientsPerDiem" name="clientsPerDiem"></ion-input>
               </div>
             </div>
             <div class="flex">
@@ -82,7 +82,7 @@
                 Percent of Patients/Clients That Could Use HydraFacial
               </div>
               <div class="non-dollar">
-                <ion-input class="input" type="number" (ionBlur)="treatmentVolume()" [(ngModel)]="percentOfPat" name="percentOfPat"></ion-input>
+                <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="percentOfPat" name="percentOfPat"></ion-input>
               </div>
             </div>
             <div class="flex">
@@ -98,7 +98,7 @@
                 Days of Regular Operation
               </div>
               <div class="non-dollar">
-                <ion-input class="input" type="number" (ionBlur)="treatmentVolume()" [(ngModel)]="daysOfOp" name="daysOfOp"></ion-input>
+                <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="daysOfOp" name="daysOfOp"></ion-input>
               </div>
             </div>
             <div class="flex total-bar" id="bottomless">
@@ -124,7 +124,7 @@
             </div>
             <div class="flex end">
               $
-              <ion-input class="input" type="number" (ionBlur)="treatmentRevenue()" [(ngModel)]="pricePerTreatment" name="pricePerTreatment"></ion-input>
+              <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="pricePerTreatment" name="pricePerTreatment"></ion-input>
             </div>
           </div>
           <p class="obl">Base on Standard or Signature Treatments</p>
@@ -133,7 +133,7 @@
               Percent of Treatment with Added Booster
             </div>
             <div class="non-dollar">
-              <ion-input class="input" type="number" (ionBlur)="treatmentRevenue()" [(ngModel)]="percentOfTreatMentBooster" name="percentOfTreatMentBooster"></ion-input>
+              <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="percentOfTreatMentBooster" name="percentOfTreatMentBooster"></ion-input>
             </div>
           </div>
           <div class="flex">
@@ -142,7 +142,7 @@
             </div>
             <div class="flex end">
               $
-              <ion-input class="input" type="number" (ionBlur)="treatmentRevenue()" [(ngModel)]="addBooster" name="addBooster"></ion-input>
+              <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="addBooster" name="addBooster"></ion-input>
             </div>
           </div>
           <div class="flex">
@@ -202,7 +202,7 @@
               </div>
               <div class="flex end">
                 $
-                <ion-input class="input" type="number" (ionBlur)="investmentReturn()" [(ngModel)]="consumableCost" name="consumableCost"></ion-input>
+                <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="consumableCost" name="consumableCost"></ion-input>
               </div>
             </div>
             <div class="flex bold">
@@ -212,7 +212,7 @@
               </div>
               <div class="flex end">
                 $
-                <ion-input class="input" type="number" (ionBlur)="investmentReturn()" [(ngModel)]="boosterCost" name="boosterCost"></ion-input>
+                <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="boosterCost" name="boosterCost"></ion-input>
               </div>
             </div>
           </form>

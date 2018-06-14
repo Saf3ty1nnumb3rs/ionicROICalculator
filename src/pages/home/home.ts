@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NavController } from "ionic-angular";
+import * as _ from "lodash";
 
 @Component({
   selector: "page-home",
@@ -50,16 +51,17 @@ export class HomePage implements OnInit {
     this.consumableCost = 0;
     this.boosterCost = 0;
     this.calculateInvestment();
-    this.treatmentVolume();
   }
 
   calculateInvestment() {
+
     this.totalCI = this.hydraCI * this.hydraMach;
     this.netCapInv = this.totalCI - this.taxDisc;
-    this.payoffBleu();
+    
+    this.treatmentVolume();
   }
   treatmentVolume() {
-    this.projectedPPD = this.clientsPerDiem * this.percentOfPat;
+    this.projectedPPD = Math.round((this.clientsPerDiem * this.percentOfPat)*100)/100;
     this.totalWeeklyTreat = this.projectedPPD * this.daysOfOp;
     this.treatmentRevenue();
   }
@@ -68,25 +70,28 @@ export class HomePage implements OnInit {
       (this.totalWeeklyTreat * this.pricePerTreatment) +
       ((this.totalWeeklyTreat * this.percentOfTreatMentBooster) *
         this.addBooster);
-    this.weeklyRevWithLift = this.weeklyRevAll * 1.15;
-    this.averageGrossPerTreat = this.weeklyRevWithLift / this.totalWeeklyTreat;
+    this.weeklyRevWithLift = Math.round((this.weeklyRevAll * 1.15)*100)/100;
+    this.averageGrossPerTreat = Math.round((this.weeklyRevWithLift / this.totalWeeklyTreat)*100)/100;
     this.investmentReturn();
   }
   investmentReturn() {
-    this.monthlyGrossRev = this.weeklyRevWithLift * 4.25;
+    this.monthlyGrossRev = Math.round((this.weeklyRevWithLift * 4.25)*100)/100;
     this.monthlyConsumableCost =
-      this.totalWeeklyTreat * (this.consumableCost + this.boosterCost);
+      (this.totalWeeklyTreat * this.consumableCost) + (this.boosterCost*this.totalWeeklyTreat);
+      console.log(this.totalWeeklyTreat, this.consumableCost, this.boosterCost)
+      console.log(this.totalWeeklyTreat * (this.consumableCost + this.boosterCost))
     this.monthlyNetRev = this.monthlyGrossRev - this.monthlyConsumableCost;
-    this.netRevPerTreatment =
-      this.monthlyNetRev / (this.totalWeeklyTreat * 4.25);
+    this.netRevPerTreatment = Math.round(
+      (this.monthlyNetRev / (this.totalWeeklyTreat * 4.25))*100)/100;
+     
     this.payoffBleu();
   }
   payoffBleu() {
-    this.monthPayoff = this.netCapInv / this.monthlyNetRev;
-    this.treatPayoff = this.netCapInv / this.netRevPerTreatment;
-    this.oneYearGross = this.monthlyGrossRev * 12;
-    this.oneYearProf = this.monthlyNetRev * 12 - this.netCapInv;
-    this.fiveYearGross = this.monthlyGrossRev * 60;
-    this.fiveYearProf = this.monthlyNetRev * 60 - this.netCapInv;
+    this.monthPayoff = Math.round((this.netCapInv / this.monthlyNetRev)*100)/100;
+    this.treatPayoff = Math.round((this.netCapInv / this.netRevPerTreatment)*100)/100;
+    this.oneYearGross = Math.round(this.monthlyGrossRev * 12);
+    this.oneYearProf = Math.round(this.monthlyNetRev * 12 - this.netCapInv);
+    this.fiveYearGross = Math.round(this.monthlyGrossRev * 60);
+    this.fiveYearProf = Math.round(this.monthlyNetRev * 60 - this.netCapInv);
   }
 }
