@@ -3,7 +3,7 @@
     <name>hydrafacialROICalculator</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.10.58:8101" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -91,5 +91,4 @@
     <allow-navigation href="http://192.168.10.58:8101" />
     <allow-navigation href="http://10.199.115.195:8101" />
     <engine name="ios" spec="4.5.4" />
-    <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
 </widget>

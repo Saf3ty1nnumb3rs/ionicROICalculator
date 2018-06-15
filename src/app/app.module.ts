@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule,Injectable, Injector } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { Pro } from '@ionic/pro';
+import { Keyboard } from '@ionic-native/keyboard';
 
 
 import { MyApp } from './app.component';
@@ -51,6 +52,7 @@ export class MyErrorHandler implements ErrorHandler {
     ListPage
   ],
   providers: [
+    Keyboard,
     StatusBar,
     SplashScreen,
     IonicErrorHandler,

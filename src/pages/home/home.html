@@ -14,14 +14,13 @@
       <ion-col class="block">
         <!--  ####### Capital Equipment Block ###### -->
         <p class="head">Capital Equipment</p>
-        <form class="grad">
+        <form class="grad top">
           <div class="flex">
             <div class="content">
               HydraFacial Capital Investment
             </div>
             <div class="flex end">
-              $
-              <ion-input class="input" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="hydraCI" name="hydraCI"></ion-input>
+              <ion-input class="input dollar" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="hydraCI" name="hydraCI"></ion-input>
             </div>
           </div>
           <div class="flex">
@@ -38,7 +37,7 @@
             </div>
             <div class="flex end">
               $
-              <div *ngIf="totalCI" class="no-border">{{totalCI}}</div>
+              <div *ngIf="totCap" class="no-border">{{totCap}}</div>
             </div>
           </div>
           <div class="content bold">
@@ -49,8 +48,7 @@
               Section 179 Tax Discounts
             </div>
             <div class="flex end">
-              - $
-              <ion-input class="no-border" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="taxDisc" name="taxDisc"></ion-input>
+              <ion-input class="no-border large dollar minus" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="taxDisc" name="taxDisc"></ion-input>
             </div>
           </div>
           <p class="obl">Note: Consult Your Tax Professional</p>
@@ -60,7 +58,7 @@
             </div>
             <div class="flex end white">
               $
-              <div *ngIf="netCapInv" class="no-border">{{netCapInv}}</div>
+              <div *ngIf="netCap" class="no-border">{{netCap}}</div>
             </div>
           </div>
         </form>
@@ -68,21 +66,21 @@
         <!--  ###### Begin Treatment Volume Block ###### -->
         <div class="left-spacer">
           <p class="head">Treatment Volume</p>
-          <form class="grad">
+          <form class="grad top">
             <div class="flex">
               <div class="content">
                 Typical Patients/Clients per Day
               </div>
               <div class="non-dollar">
-                <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="clientsPerDiem" name="clientsPerDiem"></ion-input>
+                <ion-input class="input" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="clientsPerDiem" name="clientsPerDiem"></ion-input>
               </div>
             </div>
             <div class="flex">
-              <div class="content">
+              <div class="content med-width">
                 Percent of Patients/Clients That Could Use HydraFacial
               </div>
               <div class="non-dollar">
-                <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="percentOfPat" name="percentOfPat"></ion-input>
+                <ion-input class="input percent" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="percentPatient" name="percentPatient"></ion-input>
               </div>
             </div>
             <div class="flex">
@@ -90,7 +88,7 @@
                 Projected HydraFacial Treatments per Day
               </div>
               <div class="non-dollar">
-                <div *ngIf="projectedPPD" class="no-border">{{projectedPPD}}</div>
+                <div *ngIf="projectedPPD" class="no-border center">{{projectedPPD}}</div>
               </div>
             </div>
             <div class="flex bottomless">
@@ -98,7 +96,7 @@
                 Days of Regular Operation
               </div>
               <div class="non-dollar">
-                <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="daysOfOp" name="daysOfOp"></ion-input>
+                <ion-input class="input" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="daysOfOp" name="daysOfOp"></ion-input>
               </div>
             </div>
             <div class="flex total-bar" id="bottomless">
@@ -106,7 +104,7 @@
                 Total Weekly Treatments
               </div>
               <div class="non-dollar white">
-                <div *ngIf="totalWeeklyTreat" class="no-border">{{totalWeeklyTreat}}</div>
+                <div *ngIf="totalWeeklyTreat" class="no-border center">{{totalWeeklyTreat}}</div>
               </div>
             </div>
           </form>
@@ -117,14 +115,13 @@
       <ion-col class="block">
         <!-- ###### Begin Treatment Revenue Block ####### -->
         <p class="head">Treatment Revenue</p>
-        <form class="grad">
+        <form class="grad top">
           <div class="flex">
             <div class="content">
               Price Per Treatment
             </div>
             <div class="flex end">
-              $
-              <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="pricePerTreatment" name="pricePerTreatment"></ion-input>
+              <ion-input class="input dollar" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="pricePerTreatment" name="pricePerTreatment"></ion-input>
             </div>
           </div>
           <p class="obl">Base on Standard or Signature Treatments</p>
@@ -133,7 +130,7 @@
               Percent of Treatment with Added Booster
             </div>
             <div class="non-dollar">
-              <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="percentOfTreatMentBooster" name="percentOfTreatMentBooster"></ion-input>
+              <ion-input class="input percent" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="percentBoost" name="percentBoost"></ion-input>
             </div>
           </div>
           <div class="flex">
@@ -141,8 +138,7 @@
               Additional Booster Revenue/Treatment
             </div>
             <div class="flex end">
-              $
-              <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="addBooster" name="addBooster"></ion-input>
+              <ion-input class="input dollar" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="addBooster" name="addBooster"></ion-input>
             </div>
           </div>
           <div class="flex">
@@ -151,7 +147,7 @@
             </div>
             <div class="flex end">
               $
-              <div *ngIf="weeklyRevAll" class="no-border">{{weeklyRevAll}}</div>
+              <div *ngIf="weekAll" class="no-border">{{weekAll}}</div>
             </div>
           </div>
           <div class="flex bottomless">
@@ -161,9 +157,9 @@
             <div>
               <select class="ion-input-select">
 
-                <option>Small</option>
+                <option>Low</option>
                 <option>Medium</option>
-                <option>Large</option>
+                <option>High</option>
 
               </select>
             </div>
@@ -176,7 +172,7 @@
               </div>
               <div class="flex end white">
                 $
-                <div *ngIf="weeklyRevWithLift" class="no-border">{{weeklyRevWithLift}}</div>
+                <div *ngIf="weekLift" class="no-border">{{weekLift}}</div>
               </div>
             </div>
             <div class="flex total-bar" id="white">
@@ -194,15 +190,14 @@
         <!--  ###### Begin Costs Per Treatment Block ###### -->
         <div id="bottom-box">
           <p class="head bottom">Costs per Treatment</p>
-          <form class="grad">
+          <form class="grad top">
             <div class="flex">
               <div class="content">
                 <p class="tight-squeeze">Consumable Costs</p>
                 <p class="tight-squeeze small">(Serums and Tips Cost per Treatment)</p>
               </div>
               <div class="flex end">
-                $
-                <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="consumableCost" name="consumableCost"></ion-input>
+                <ion-input class="input dollar" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="consumableCost" name="consumableCost"></ion-input>
               </div>
             </div>
             <div class="flex bold">
@@ -211,8 +206,7 @@
                 <p class="tight-squeeze small">(Serums or Lymphatic/Light)</p>
               </div>
               <div class="flex end">
-                $
-                <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="boosterCost" name="boosterCost"></ion-input>
+                <ion-input class="input dollar" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="boosterCost" name="boosterCost"></ion-input>
               </div>
             </div>
           </form>
@@ -223,14 +217,14 @@
       <ion-col class="block">
         <!--  ###### Begin Investment Return Block ###### -->
         <p class="head">Investment Return</p>
-        <form class="grad">
+        <form class="grad top">
           <div class="flex">
             <div class="content">
               Monthly Gross Revenue
             </div>
             <div class="flex end">
               $
-              <div *ngIf="monthlyGrossRev" class="no-border">{{monthlyGrossRev}}</div>
+              <div *ngIf="monthGross" class="no-border">{{monthGross}}</div>
             </div>
           </div>
           <div class="flex bold">
@@ -239,7 +233,7 @@
             </div>
             <div class="flex end">
               $
-              <div *ngIf="monthlyConsumableCost" class="no-border">{{monthlyConsumableCost}}</div>
+              <div *ngIf="monthConsume" class="no-border">{{monthConsume}}</div>
             </div>
           </div>
           <div class="spacer">
@@ -249,7 +243,7 @@
               </div>
               <div class="flex end white">
                 $
-                <div *ngIf="monthlyNetRev" class="no-border">{{monthlyNetRev}}</div>
+                <div *ngIf="monthNet" class="no-border">{{monthNet}}</div>
               </div>
             </div>
             <div class="flex total-bar" id="white">
@@ -269,21 +263,21 @@
           <ion-row class="tight-box top">
             <ion-col class="square left left-top">
               <p class="box-head">1 YEAR GROSS REVENUE</p>
-              <p class="box-bottom" *ngIf="oneYearGross">${{oneYearGross}}</p>
+              <p class="box-bottom" *ngIf="oneYG">${{oneYG}}</p>
             </ion-col>
             <ion-col class="square right right-top">
               <p class="box-head right">1 YEAR PROFIT</p>
-              <p class="box-bottom" *ngIf="oneYearProf">${{oneYearProf}}</p>
+              <p class="box-bottom" *ngIf="oneYP">${{oneYP}}</p>
             </ion-col>
           </ion-row>
           <ion-row class="tight-box bottom">
             <ion-col class="square left left-bottom">
               <p class="box-head">5 YEAR GROSS REVENUE</p>
-              <p class="box-bottom" *ngIf="fiveYearGross">${{fiveYearGross}}</p>
+              <p class="box-bottom" *ngIf="fiveYG">${{fiveYG}}</p>
             </ion-col>
             <ion-col class="square right right-bottom">
               <p class="box-head right">5 YEAR PROFIT</p>
-              <p class="box-bottom" *ngIf="fiveYearProf">${{fiveYearProf}}</p>
+              <p class="box-bottom" *ngIf="fiveYP">${{fiveYP}}</p>
             </ion-col>
           </ion-row>
         </ion-grid>
