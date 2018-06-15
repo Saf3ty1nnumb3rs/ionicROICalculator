@@ -21,7 +21,7 @@
             </div>
             <div class="flex end">
               $
-              <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="hydraCI" name="hydraCI"></ion-input>
+              <ion-input class="input" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="hydraCI" name="hydraCI"></ion-input>
             </div>
           </div>
           <div class="flex">
@@ -29,7 +29,7 @@
               Number of HydraFacial Machines
             </div>
             <div class="non-dollar">
-              <ion-input class="input" type="number" (ionBlur)="calculateInvestment()" [(ngModel)]="hydraMach" name="hydraMach"></ion-input>
+              <ion-input class="input" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="hydraMach" name="hydraMach"></ion-input>
             </div>
           </div>
           <div class="flex bold">

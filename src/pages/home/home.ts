@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { NavController } from "ionic-angular";
-import * as _ from "lodash";
 
 @Component({
   selector: "page-home",
@@ -46,7 +45,7 @@ export class HomePage implements OnInit {
     this.percentOfPat = 0.5;
     this.daysOfOp = 6;
     this.pricePerTreatment = 150;
-    this.percentOfTreatMentBooster = 0.2;
+    this.percentOfTreatMentBooster = 0.20;
     this.addBooster = 75;
     this.consumableCost = 0;
     this.boosterCost = 0;
@@ -87,8 +86,8 @@ export class HomePage implements OnInit {
     this.payoffBleu();
   }
   payoffBleu() {
-    this.monthPayoff = Math.round((this.netCapInv / this.monthlyNetRev)*100)/100;
-    this.treatPayoff = Math.round((this.netCapInv / this.netRevPerTreatment)*100)/100;
+    this.monthPayoff = Math.round(((this.netCapInv / this.monthlyNetRev)*1000))/1000;
+    this.treatPayoff = Math.round((this.netCapInv / this.netRevPerTreatment)*1000)/1000;
     this.oneYearGross = Math.round(this.monthlyGrossRev * 12);
     this.oneYearProf = Math.round(this.monthlyNetRev * 12 - this.netCapInv);
     this.fiveYearGross = Math.round(this.monthlyGrossRev * 60);
