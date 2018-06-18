@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { NavController } from "ionic-angular";
 import { Keyboard } from '@ionic-native/keyboard';
 
+
 @Component({
   selector: "page-home",
   templateUrl: "home.html"
@@ -37,6 +38,8 @@ export class HomePage implements OnInit {
   fiveYearProf: number;
   percentPatient: number;
   percentBoost: number;
+  liftPercent: number;
+  selectedValue:string;
   weekAll: string;
   weekLift: string;
   totCap: string;
@@ -54,7 +57,7 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.hydraCI = 25000;
     this.hydraMach = 2;
-    this.taxDisc = 10000;
+    this.taxDisc = 1000;
     this.clientsPerDiem = 10;
     this.percentPatient = 50;
     this.daysOfOp = 6;
@@ -63,6 +66,8 @@ export class HomePage implements OnInit {
     this.addBooster = 75;
     this.consumableCost = 25;
     this.boosterCost = 20;
+    this.liftPercent = 1.15;
+    this.selectedValue = 'medium';
     this.calculateInvestment();
   }
 
@@ -87,7 +92,7 @@ export class HomePage implements OnInit {
       ((this.totalWeeklyTreat * this.percentOfTreatMentBooster) *
         this.addBooster);
     this.weekAll = this.numberWithCommas(this.weeklyRevAll);
-    this.weeklyRevWithLift = Math.round((this.weeklyRevAll * 1.15)*100)/100;
+    this.weeklyRevWithLift = Math.round((this.weeklyRevAll * this.liftPercent)*100)/100;
     this.weekLift = this.numberWithCommas(this.weeklyRevWithLift);
     this.averageGrossPerTreat = Math.round((this.weeklyRevWithLift / this.totalWeeklyTreat)*100)/100;
     this.investmentReturn();
@@ -95,7 +100,7 @@ export class HomePage implements OnInit {
   investmentReturn() {
     this.monthlyGrossRev = Math.round((this.weeklyRevWithLift * 4.25)*100)/100;
     this.monthlyConsumableCost =
-      (this.totalWeeklyTreat * this.consumableCost) + (this.boosterCost*this.totalWeeklyTreat);
+      ((this.totalWeeklyTreat * this.consumableCost) + (this.boosterCost*this.totalWeeklyTreat))*4.25;
     this.monthlyNetRev = this.monthlyGrossRev - this.monthlyConsumableCost;
     this.netRevPerTreatment = Math.round(
       (this.monthlyNetRev / (this.totalWeeklyTreat * 4.25))*100)/100;
@@ -108,9 +113,9 @@ export class HomePage implements OnInit {
     this.monthPayoff = this.roundNumber(this.netCapInv / this.monthlyNetRev);
     this.treatPayoff = this.roundNumber(this.netCapInv / this.netRevPerTreatment);
     this.oneYearGross = Math.round(this.monthlyGrossRev * 12);
-    this.oneYearProf = Math.round(this.monthlyNetRev * 12 - this.netCapInv);
+    this.oneYearProf = Math.round((this.monthlyNetRev * 12) - this.netCapInv);
     this.fiveYearGross = Math.round(this.monthlyGrossRev * 60);
-    this.fiveYearProf = Math.round(this.monthlyNetRev * 60 - this.netCapInv);
+    this.fiveYearProf = Math.round((this.monthlyNetRev * 60) - this.netCapInv);
     
     this.oneYG = this.numberWithCommas(this.oneYearGross);
     this.oneYP = this.numberWithCommas(this.oneYearProf);
@@ -126,4 +131,18 @@ export class HomePage implements OnInit {
   roundNumber = (num) => {
     return Math.round(num*100)/100
   }
+  liftPercentValue(){
+    console.log(this.selectedValue)
+    const val =this.selectedValue
+    if(val === 'medium'){
+      this.liftPercent = 1.25;
+    }else if(val === 'high'){
+      this.liftPercent = 1.35;
+    }else{
+      this.liftPercent = 1.15;
+    }
+    this.calculateInvestment()
+  }
+  
 }
+
