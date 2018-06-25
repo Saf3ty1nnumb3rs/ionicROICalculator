@@ -5,6 +5,36 @@
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
 
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  src: url('../assets/fonts/bebas/BebasNeueBook.otf');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  src: url('../assets/fonts/bebas/BebasNeue.otf');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  src: url('../assets/fonts/FuturaStd-Bold.otf');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  src: url('../assets/fonts/FuturaStd-Book.otf');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  src: url('../assets/fonts/FuturaStd-Light.otf');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  src: url('../assets/fonts/FuturaStd-Medium.otf');
+}
 
 // The app direction is used to include
 // rtl styles in your app. For more info, please see:
