@@ -8,15 +8,15 @@ page-home {
     align-items: center;
     height: 104px;
     img.head-img {
-        width: 212px;
-        height: 47px;
-        margin-right: 2vw;
+      width: 318px;
+      height: 70.5px;
+      margin-right: 2vw;
     }
     div {
       display: inline-flex;
       margin-left: 4.2vw;
       p {
-        font-size: 53px;
+        font-size: 57px;
         margin: 0 auto;
         margin-left: 1vw;
         line-height: 104px;
@@ -31,21 +31,18 @@ page-home {
     }
   } //END HEADER STYLES //////////BEGIN GRID/COLUMN/ROW STYLES/////////////////////
   ion-content[padding] {
-      img {
-          width: 50px;
-          height: 50px;
-      }
-      .foot-img {
-          position: absolute;
-          bottom: 4.5vh;
-          right: 50%;
-          left: 50%;
-      }
+    img {
+      width: 50px;
+      height: 50px;
+    }
+    .foot-img {
+      margin: auto;
+    }
     ion-grid {
       padding-top: 0px;
       height: 100%;
       ion-row.primary {
-        margin-top: 50px;
+        margin-top: 38px;
         display: flex;
         justify-content: space-around;
         height: 80%;
@@ -55,9 +52,9 @@ page-home {
           max-height: 100%;
           p.head {
             font-family: "BebasNeue", sans-serif;
-            font-size: 46px;
+            font-size: 47px;
             text-align: start;
-            line-height: 36px;
+            line-height: 47px;
             margin: 14px 8px;
           }
           .spacer {
@@ -73,13 +70,17 @@ page-home {
             margin-top: 126px;
           } //   END G/C/R STYLES ///////////////////////////////////////////////
           //   PRIMARY BOX STYLES /////////////////////////////////////////////
+          form.grad.top {
+            background-color: #fff;
+            background-image: linear-gradient(180deg, #efefef 0%, #f9ffff 50%, #ffffff 100%);
+          }
           form.grad {
             width: 100%;
-            background-size: 360px 100px;
+            background-size: 100% 300px;
             background-repeat: no-repeat;
-            background: linear-gradient(white, rgba(216, 216, 216, 0.04));
+            background-color: #fff;
             p.obl {
-              font-size: 10px;
+              font-size: 11px;
               font-style: oblique;
               padding: 0px 16px;
               padding-bottom: 5px;
@@ -89,37 +90,50 @@ page-home {
               display: flex;
               justify-content: space-between;
               align-items: center;
-              height: 49px;
+              height: 60px;
               margin: 0 auto;
               width: 97%;
               border-bottom: .5px solid #666666;
-              padding-left:8px;
+              padding-left: 8px;
               padding-right: 8px;
               .narrow {
                 width: 50%;
+              }
+              .med-width {
+                width: 60%;
               }
               .tight-squeeze {
                 padding: 0;
                 margin: 0;
               }
               .end {
-                  justify-content: flex-end;
-                  width: 33%;
-                  margin: 0;
-                  border-bottom: none;
-                  height: auto;
+                justify-content: flex-end;
+                width: 27%;
+                margin: 0;
+                padding-left:0;
+                border-bottom: none;
+                height: auto;
               }
               .non-dollar {
-                  padding-right: 8px;
+                padding-right: 8px;
+                min-width: 60px;
+                div.no-border.center {
+                  text-align: center;
+                }
               }
               .white {
-                  color: #fff;
+                color: #fff;
               }
               div.content {
                 font-family: "Helvetica", sans-serif;
-                font-size: 14px;
+                font-size: 18px;
                 color: #666666;
-                line-height: 17px;
+                line-height: 23px;
+              }
+              ion-input {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
               }
               ion-input.input {
                 background: #fff;
@@ -133,16 +147,45 @@ page-home {
                 line-height: 17px;
                 padding-top: 3px;
               }
+              ion-input.input.percent {
+                input.text-input-ios {
+                  text-align: end;
+                  margin-right: 1px;
+                  padding-right: 1px;
+                }
+              }
+              ion-input.dollar:last-child:before {
+                content: "$";
+                padding: 0 2px;
+              }
+              ion-input.percent:last-child:after {
+                content: "%";
+                padding-right: 2px;
+                margin-left: 0;
+              }
+              ion-input.dollar.minus:last-child:before {
+                content: "-$";
+                padding: 0 2px;
+              }
               ion-input input.text-input-ios {
                 margin: auto;
-                text-align: end;
+                text-align: center;
                 font-size: 14px;
                 line-height: 17px;
               }
-              ion-input.no-border {
+              div.no-border {
                 border: none;
-                font-weight: bold;
                 background: transparent;
+                font-size: 18px;
+                color: #666666;
+              }
+              div.no-border.white {
+                font-size: 18px;
+                font-weight: bold;
+                color: #ffffff;
+              }
+              ion-input.no-border.large {
+                max-width: 70px;
               }
             }
             div.flex.bold {
@@ -171,14 +214,14 @@ page-home {
                 box-sizing: border-box;
                 text-align: center;
                 background: transparent;
-                width: 69px;
+                width: auto;
                 height: 24px;
               }
             }
           }
           div.content.bold {
             font-family: "Helvetica", sans-serif;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
             letter-spacing: 0px;
             color: #666666;
@@ -198,14 +241,10 @@ page-home {
             div.content.white {
               color: white;
               font-weight: bold;
-              font-size: 14px;
+              font-size: 18px;
+              line-height: 29px;
             }
-            ion-input.no-border.blue {
-              border: none;
-              background: transparent;
-              color: #fff;
-              letter-spacing: 0px;
-            }
+           
           }
           div.flex.total-bar#white {
             background-color: #fff;
@@ -214,25 +253,39 @@ page-home {
             min-width: 350px;
             margin: 0 auto;
             height: auto;
+            font-size: 18px;
+            color: #666666;
             border: 0.5px solid #43AAC5;
           }
         }
       }
-      ion-row.primary:after {
-        content: " ";
-        margin: 112px auto;
-        width: 90%;
-        border-bottom: 0.5px solid #333;
+      // ion-row.primary:after {
+      //   content: " ";
+      //   margin: 109px auto;
+      //   width: 90%;
+      //   border-bottom: 0.5px solid #333;
+      // }
+      div.flex-bottom {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 109px 2vw 0 2vw;
+        
+        .foot-left,
+        .foot-right {
+          content: " ";
+          width: 47%;
+          border-bottom: 0.5px solid #333;
+        }
       }
     }
-  }
-  //   END PRIMARY BOX STYLES ///// 
+  } //   END PRIMARY BOX STYLES ///// 
   //   BOTTOM RIGHT BLUE BOX GRID STYLES ////////////////////////////////////////
   ion-grid#bottom-right {
     width: 100%;
     background: #43AAC5;
     max-height: 290px;
-    margin-top: 50px;
+    margin-top: 91px;
     ion-row.tight-box {
       margin: 0 auto;
       width: 100%;
@@ -246,37 +299,39 @@ page-home {
       ion-col.square.left {
         border-right: 0.5px solid #fff;
       }
-      ion-col.square.left-bottom, ion-col.square.right-bottom {
+      ion-col.square.left-bottom,
+      ion-col.square.right-bottom {
         margin-bottom: 30px;
         height: 90%;
         p.box-head {
-            margin: 0 auto;
-            line-height: 19px;
-            padding-top: 20px;
-            font-family: "Helvetica", sans-serif;
-            font-size: 18px;
-            color: #fff;
-            text-align: center;
-            height: 40%;
-          }
+          margin: 0 auto;
+          line-height: 19px;
+          padding-top: 20px;
+          font-family: "Helvetica", sans-serif;
+          font-size: 18px;
+          color: #fff;
+          text-align: center;
+          height: 40%;
+        }
         p.box-bottom {
-              padding-top: 14px;
-         }
+          padding-top: 14px;
+        }
       }
-      ion-col.square.right-top, ion-col.square.left-top {
+      ion-col.square.right-top,
+      ion-col.square.left-top {
         margin-bottom: 0;
         margin-top: 20px;
         height: 88%;
         p.box-head {
-            margin: 0 auto;
-            line-height: 19px;
-            padding-top: 5px;
-            font-family: "Helvetica", sans-serif;
-            font-size: 18px;
-            color: #fff;
-            text-align: center;
-            height: 40%;
-          }
+          margin: 0 auto;
+          line-height: 19px;
+          padding-top: 5px;
+          font-family: "Helvetica", sans-serif;
+          font-size: 18px;
+          color: #fff;
+          text-align: center;
+          height: 40%;
+        }
       }
     }
     ion-row.tight-box.top:after {
@@ -288,7 +343,7 @@ page-home {
     }
     p.box-bottom {
       font-family: "BebasNeue", sans-serif;
-      font-size: 55px;
+      font-size: 43px;
       height: 40%;
       color: #fff;
       text-align: center;
@@ -296,40 +351,37 @@ page-home {
       margin: 0;
     }
     p.box-head.right {
-        width: 60%;
+      width: 60%;
     }
   }
   form.grad#payoff {
     border: 1px solid #43AAC5;
     div.flex {
       border-bottom: 0.5px solid #43AAC5;
+      .bleu {
+        color: #43AAC5;
+        font-size: 18px;
+        font-weight: bold;
+      }
     }
     div.content.bleu {
       color: #43AAC5;
       font-family: "Helvetica", sans-serif;
-      font-size: 16px;
+      font-size: 24px;
       height: auto;
     }
     div.flex.bold.bottomless {
       border-bottom: none;
-    }
-    ion-input.no-border.bleu.input.input-md {
-      height: 40px;
-      font-size: 28px;
-      line-height: 29px;
-      padding-bottom: 5px;
-      color: #43AAC5;
-      input.text-input.text-input-md {
-        padding-bottom: 8px;
-        width: 100%;
-        height: 100%;
-        font-size: 28px;
-        line-height: 29px;
-        color: #43AAC5;
+      .content.bleu{
+        font-size: 24px;
       }
-      input{
+      .bleu {
         color: #43AAC5;
+        font-size: 18px;
+        font-weight: bold;
       }
     }
+   
+    
   }
 }
