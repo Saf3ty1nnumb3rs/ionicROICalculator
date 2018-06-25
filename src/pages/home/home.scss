@@ -6,26 +6,26 @@ page-home {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 104px;
+    height: 7vw;
     img.head-img {
-      width: 318px;
-      height: 70.5px;
-      margin-right: 2vw;
+      width: auto;
+      height: 5vw;
+      margin-right: 5vw;
     }
     div {
       display: inline-flex;
       margin-left: 4.2vw;
       p {
-        font-size: 57px;
+        font-size: 3.6vw;
         margin: 0 auto;
         margin-left: 1vw;
-        line-height: 104px;
+        line-height: 5vw;
         font-family: "BebasNeue", sans-serif;
       }
     }
     div.right-header {
       color: #fff;
-      line-height: 104px;
+      line-height: 5vw;
       margin-right: 2vw;
       font-size: 53px;
     }
@@ -39,35 +39,34 @@ page-home {
       margin: auto;
     }
     ion-grid {
-      padding-top: 0px;
       height: 100%;
       ion-row.primary {
-        margin-top: 38px;
+        margin-top: 0px;
         display: flex;
         justify-content: space-around;
         height: 80%;
         ion-col.block {
           display: block;
-          max-width: 420px;
+          max-width: 400px;
           max-height: 100%;
           p.head {
             font-family: "BebasNeue", sans-serif;
-            font-size: 47px;
+            font-size: 3.9vw;
             text-align: start;
-            line-height: 47px;
-            margin: 14px 8px;
+            line-height: 4vw;
+            margin: -2px 8px 5px 8px;
           }
           .spacer {
             margin-top: 10px;
             width: 100%;
           }
           .left-spacer {
-            margin-top: 70px;
+            margin-top: 3vw;
             width: 100%;
           }
           #bottom-box {
             width: 100%;
-            margin-top: 126px;
+            margin-top: 6.6vw;
           } //   END G/C/R STYLES ///////////////////////////////////////////////
           //   PRIMARY BOX STYLES /////////////////////////////////////////////
           form.grad.top {
@@ -76,21 +75,22 @@ page-home {
           }
           form.grad {
             width: 100%;
-            background-size: 100% 300px;
+            background-size: 100% 9vw;
             background-repeat: no-repeat;
             background-color: #fff;
             p.obl {
-              font-size: 11px;
+              font-size: 1rem;
               font-style: oblique;
               padding: 0px 16px;
               padding-bottom: 5px;
-              margin-top: -20px;
+              margin-top: -1.3vw;
+              margin-bottom: 0;
             }
             div.flex {
               display: flex;
               justify-content: space-between;
               align-items: center;
-              height: 60px;
+              height: 5vw;
               margin: 0 auto;
               width: 97%;
               border-bottom: .5px solid #666666;
@@ -100,7 +100,7 @@ page-home {
                 width: 50%;
               }
               .med-width {
-                width: 60%;
+                width: 74%;
               }
               .tight-squeeze {
                 padding: 0;
@@ -116,8 +116,9 @@ page-home {
               }
               .non-dollar {
                 padding-right: 8px;
-                min-width: 60px;
+                min-width: 5vw;
                 div.no-border.center {
+                  min-width: 3.5vw;
                   text-align: center;
                 }
               }
@@ -126,9 +127,9 @@ page-home {
               }
               div.content {
                 font-family: "Helvetica", sans-serif;
-                font-size: 18px;
+                font-size: 1.5rem;
                 color: #666666;
-                line-height: 23px;
+                line-height: 1.5rem;
               }
               ion-input {
                 display: flex;
@@ -139,19 +140,19 @@ page-home {
                 background: #fff;
                 color: #666666;
                 border: 0.5px solid #666666;
-                max-width: 60px;
-                height: 24px;
+                max-width: 5.2vw;
+                height: 2.2vw;
                 margin: 0;
                 margin-left: 2px;
-                font-size: 14px;
-                line-height: 17px;
+                font-size: 1.3rem;
+                line-height: 1.3rem;
                 padding-top: 3px;
               }
               ion-input.input.percent {
                 input.text-input-ios {
                   text-align: end;
-                  margin-right: 1px;
-                  padding-right: 1px;
+                  margin-right: 2px;
+                  padding-right: 2px;
                 }
               }
               ion-input.dollar:last-child:before {
@@ -170,33 +171,33 @@ page-home {
               ion-input input.text-input-ios {
                 margin: auto;
                 text-align: center;
-                font-size: 14px;
-                line-height: 17px;
+                font-size: 1.25rem;
+                line-height: 1.3rem;
               }
               div.no-border {
                 border: none;
                 background: transparent;
-                font-size: 18px;
+                font-size: 1.3rem;
                 color: #666666;
               }
               div.no-border.white {
-                font-size: 18px;
+                font-size: 1.4rem;
                 font-weight: bold;
                 color: #ffffff;
               }
               ion-input.no-border.large {
-                max-width: 70px;
+                max-width: 5vw;
               }
             }
             div.flex.bold {
               display: flex;
               justify-content: space-between;
               align-items: center;
-              min-height: 49px;
+              min-height: 4vw;
               border-bottom: none;
             }
             .small {
-              font-size: 12px;
+              font-size: 1.2rem;
             }
             div.flex.bottomless {
               border-bottom: none;
@@ -215,34 +216,34 @@ page-home {
                 text-align: center;
                 background: transparent;
                 width: auto;
-                height: 24px;
+                height: 2vw;
               }
             }
           }
           div.content.bold {
             font-family: "Helvetica", sans-serif;
-            font-size: 18px;
+            font-size: 1.4rem;
             font-weight: bold;
             letter-spacing: 0px;
             color: #666666;
-            line-height: 17px;
-            margin-top: 10px;
+            line-height: 1.4rem;
+            margin-top: 1vw;
             margin-bottom: -6px;
-            margin-left: 16px;
+            margin-left: 1.35rem;
             width: 95%;
           }
           div.flex.total-bar#bottomless {
             background-color: #43AAC5;
             border: none;
             border-bottom: none;
-            min-width: 350px;
+            min-width: 300px;
             margin: 0 auto;
             height: auto;
             div.content.white {
               color: white;
               font-weight: bold;
-              font-size: 18px;
-              line-height: 29px;
+              font-size: 1.4rem;
+              line-height: 1.7rem;
             }
            
           }
@@ -250,10 +251,10 @@ page-home {
             background-color: #fff;
             border: none;
             border-bottom: none;
-            min-width: 350px;
+            min-width: 300px;
             margin: 0 auto;
             height: auto;
-            font-size: 18px;
+            font-size: 1.4rem;
             color: #666666;
             border: 0.5px solid #43AAC5;
           }
@@ -284,8 +285,9 @@ page-home {
   ion-grid#bottom-right {
     width: 100%;
     background: #43AAC5;
-    max-height: 290px;
-    margin-top: 91px;
+    max-height: 23vw;
+    min-height: 22vw;
+    margin-top: 6.1vw;
     ion-row.tight-box {
       margin: 0 auto;
       width: 100%;
@@ -308,7 +310,7 @@ page-home {
           line-height: 19px;
           padding-top: 20px;
           font-family: "Helvetica", sans-serif;
-          font-size: 18px;
+          font-size: 1.4rem;
           color: #fff;
           text-align: center;
           height: 40%;
@@ -320,14 +322,14 @@ page-home {
       ion-col.square.right-top,
       ion-col.square.left-top {
         margin-bottom: 0;
-        margin-top: 20px;
+        margin-top: 1.1vw;
         height: 88%;
         p.box-head {
           margin: 0 auto;
-          line-height: 19px;
+          line-height: 1.4rem;
           padding-top: 5px;
           font-family: "Helvetica", sans-serif;
-          font-size: 18px;
+          font-size: 1.4rem;
           color: #fff;
           text-align: center;
           height: 40%;
@@ -343,7 +345,7 @@ page-home {
     }
     p.box-bottom {
       font-family: "BebasNeue", sans-serif;
-      font-size: 43px;
+      font-size: 3.5vw;
       height: 40%;
       color: #fff;
       text-align: center;
@@ -351,7 +353,7 @@ page-home {
       margin: 0;
     }
     p.box-head.right {
-      width: 60%;
+      width: 50%;
     }
   }
   form.grad#payoff {
@@ -360,24 +362,24 @@ page-home {
       border-bottom: 0.5px solid #43AAC5;
       .bleu {
         color: #43AAC5;
-        font-size: 18px;
+        font-size: 1.3rem;
         font-weight: bold;
       }
     }
     div.content.bleu {
       color: #43AAC5;
       font-family: "Helvetica", sans-serif;
-      font-size: 24px;
+      font-size: 1.6rem;
       height: auto;
     }
     div.flex.bold.bottomless {
       border-bottom: none;
       .content.bleu{
-        font-size: 24px;
+        font-size: 1.6rem;
       }
       .bleu {
         color: #43AAC5;
-        font-size: 18px;
+        font-size: 1.3rem;
         font-weight: bold;
       }
     }

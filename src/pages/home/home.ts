@@ -78,12 +78,14 @@ export class HomePage implements OnInit {
     this.totCap = this.numberWithCommas(this.totalCI);
     this.netCap = this.numberWithCommas(this.netCapInv);
     this.treatmentVolume();
+    this.keyboard.close();
   }
   treatmentVolume() {
     this.percentOfPat = this.percentPatient/100;
     this.projectedPPD = Math.round((this.clientsPerDiem * this.percentOfPat)*100)/100;
     this.totalWeeklyTreat = this.projectedPPD * this.daysOfOp;
     this.treatmentRevenue();
+    this.keyboard.close();
   }
   treatmentRevenue() {
     this.percentOfTreatMentBooster = this.percentBoost/100;
@@ -96,18 +98,20 @@ export class HomePage implements OnInit {
     this.weekLift = this.numberWithCommas(this.weeklyRevWithLift);
     this.averageGrossPerTreat = Math.round((this.weeklyRevWithLift / this.totalWeeklyTreat)*100)/100;
     this.investmentReturn();
+    this.keyboard.close();
   }
   investmentReturn() {
     this.monthlyGrossRev = Math.round((this.weeklyRevWithLift * 4.25)*100)/100;
     this.monthlyConsumableCost =
       ((this.totalWeeklyTreat * this.consumableCost) + (this.boosterCost*this.totalWeeklyTreat))*4.25;
-    this.monthlyNetRev = this.monthlyGrossRev - this.monthlyConsumableCost;
+    this.monthlyNetRev = Math.round((this.monthlyGrossRev - this.monthlyConsumableCost)*100)/100;
     this.netRevPerTreatment = Math.round(
       (this.monthlyNetRev / (this.totalWeeklyTreat * 4.25))*100)/100;
     this.monthGross = this.numberWithCommas(this.monthlyGrossRev);
     this.monthConsume = this.numberWithCommas(this.monthlyConsumableCost);
     this.monthNet = this.numberWithCommas(this.monthlyNetRev); 
     this.payoffBleu();
+    this.keyboard.close();
   }
   payoffBleu() {
     this.monthPayoff = this.roundNumber(this.netCapInv / this.monthlyNetRev);
