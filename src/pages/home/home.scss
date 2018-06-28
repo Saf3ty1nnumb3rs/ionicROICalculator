@@ -1,4 +1,5 @@
 page-home {
+  background-color: #ffffff;
   // HEADER STYLES///////////////////////////////
   ion-header {
     background: #000;
@@ -79,11 +80,11 @@ page-home {
             background-repeat: no-repeat;
             background-color: #fff;
             p.obl {
-              font-size: 1rem;
+              font-size: .9vw;
               font-style: oblique;
-              padding: 0px 16px;
+              padding: 0px 14px;
               padding-bottom: 5px;
-              margin-top: -1.3vw;
+              margin-top: -1.4vw;
               margin-bottom: 0;
             }
             div.flex {
@@ -92,7 +93,7 @@ page-home {
               align-items: center;
               height: 5vw;
               margin: 0 auto;
-              width: 97%;
+              width: 98%;
               border-bottom: .5px solid #666666;
               padding-left: 8px;
               padding-right: 8px;
@@ -118,7 +119,7 @@ page-home {
                 padding-right: 8px;
                 min-width: 5vw;
                 div.no-border.center {
-                  min-width: 3.5vw;
+                  min-width: 3.52vw;
                   text-align: center;
                 }
               }
@@ -127,9 +128,9 @@ page-home {
               }
               div.content {
                 font-family: "Helvetica", sans-serif;
-                font-size: 1.5rem;
+                font-size: 1.4vw;
                 color: #666666;
-                line-height: 1.5rem;
+                line-height: 1.42vw;
               }
               ion-input {
                 display: flex;
@@ -140,24 +141,24 @@ page-home {
                 background: #fff;
                 color: #666666;
                 border: 0.5px solid #666666;
-                max-width: 5.2vw;
+                max-width: 5.22vw;
                 height: 2.2vw;
                 margin: 0;
                 margin-left: 2px;
-                font-size: 1.3rem;
-                line-height: 1.3rem;
+                font-size: 1.4vw;
+                line-height: 1.42rem;
                 padding-top: 3px;
               }
               ion-input.input.percent {
                 input.text-input-ios {
                   text-align: end;
-                  margin-right: 2px;
-                  padding-right: 2px;
+                  margin-right: 3px;
+                  padding-right: 1px;
                 }
               }
               ion-input.dollar:last-child:before {
                 content: "$";
-                padding: 0 2px;
+                padding: 0 1px;
               }
               ion-input.percent:last-child:after {
                 content: "%";
@@ -166,22 +167,22 @@ page-home {
               }
               ion-input.dollar.minus:last-child:before {
                 content: "-$";
-                padding: 0 2px;
+                padding: 0 1px;
               }
               ion-input input.text-input-ios {
                 margin: auto;
                 text-align: center;
-                font-size: 1.25rem;
-                line-height: 1.3rem;
+                font-size: 1.28vw;
+                line-height: 1.29vw;
               }
               div.no-border {
                 border: none;
                 background: transparent;
-                font-size: 1.3rem;
+                font-size: 1.28vw;
                 color: #666666;
               }
               div.no-border.white {
-                font-size: 1.4rem;
+                font-size: 1.35vw;
                 font-weight: bold;
                 color: #ffffff;
               }
@@ -197,7 +198,7 @@ page-home {
               border-bottom: none;
             }
             .small {
-              font-size: 1.2rem;
+              font-size: 1.1vw;
             }
             div.flex.bottomless {
               border-bottom: none;
@@ -222,11 +223,11 @@ page-home {
           }
           div.content.bold {
             font-family: "Helvetica", sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.35vw;
             font-weight: bold;
             letter-spacing: 0px;
             color: #666666;
-            line-height: 1.4rem;
+            line-height: 1.36vw;
             margin-top: 1vw;
             margin-bottom: -6px;
             margin-left: 1.35rem;
@@ -242,8 +243,9 @@ page-home {
             div.content.white {
               color: white;
               font-weight: bold;
-              font-size: 1.4rem;
-              line-height: 1.7rem;
+              font-size: 1.38vw;
+              line-height: 1.5vw;
+              padding:3px 0;
             }
            
           }
@@ -254,7 +256,7 @@ page-home {
             min-width: 300px;
             margin: 0 auto;
             height: auto;
-            font-size: 1.4rem;
+            font-size: 1.38vw;
             color: #666666;
             border: 0.5px solid #43AAC5;
           }
@@ -307,10 +309,10 @@ page-home {
         height: 90%;
         p.box-head {
           margin: 0 auto;
-          line-height: 19px;
+          line-height: 1.5vw;
           padding-top: 20px;
           font-family: "Helvetica", sans-serif;
-          font-size: 1.4rem;
+          font-size: 1.45vw;
           color: #fff;
           text-align: center;
           height: 40%;
@@ -326,10 +328,10 @@ page-home {
         height: 88%;
         p.box-head {
           margin: 0 auto;
-          line-height: 1.4rem;
+          line-height: 1.5vw;
           padding-top: 5px;
           font-family: "Helvetica", sans-serif;
-          font-size: 1.4rem;
+          font-size: 1.45vw;
           color: #fff;
           text-align: center;
           height: 40%;
@@ -345,7 +347,7 @@ page-home {
     }
     p.box-bottom {
       font-family: "BebasNeue", sans-serif;
-      font-size: 3.5vw;
+      font-size: 3.4vw;
       height: 40%;
       color: #fff;
       text-align: center;
@@ -362,24 +364,24 @@ page-home {
       border-bottom: 0.5px solid #43AAC5;
       .bleu {
         color: #43AAC5;
-        font-size: 1.3rem;
+        font-size: 1.3vw;
         font-weight: bold;
       }
     }
     div.content.bleu {
       color: #43AAC5;
       font-family: "Helvetica", sans-serif;
-      font-size: 1.6rem;
+      font-size: 1.6vw;
       height: auto;
     }
     div.flex.bold.bottomless {
       border-bottom: none;
       .content.bleu{
-        font-size: 1.6rem;
+        font-size: 1.6vw;
       }
       .bleu {
         color: #43AAC5;
-        font-size: 1.3rem;
+        font-size: 1.3vw;
         font-weight: bold;
       }
     }
