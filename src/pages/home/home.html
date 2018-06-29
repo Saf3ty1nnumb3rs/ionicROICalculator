@@ -75,7 +75,7 @@
                 Typical Patients/Clients per Day
               </div>
               <div class="non-dollar">
-                <ion-input required class="input" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="clientsPerDiem"
+                <ion-input required class="input scroll-me" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="clientsPerDiem"
                   name="clientsPerDiem"></ion-input>
               </div>
             </div>
@@ -84,7 +84,7 @@
                 Percent of Patients/Clients That Could Use HydraFacial
               </div>
               <div class="non-dollar">
-                <ion-input required class="input percent" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                <ion-input required class="input percent scroll-me" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
                   [(ngModel)]="percentPatient" name="percentPatient"></ion-input>
               </div>
             </div>
@@ -101,7 +101,7 @@
                 Days of Regular Operation
               </div>
               <div class="non-dollar">
-                <ion-input required class="input" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="daysOfOp"
+                <ion-input required class="input scroll-me" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="daysOfOp"
                   name="daysOfOp"></ion-input>
               </div>
             </div>
@@ -206,7 +206,7 @@
                 <p class="tight-squeeze small">(Serums and Tips Cost per Treatment)</p>
               </div>
               <div class="flex end">
-                <ion-input required class="input dollar" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                <ion-input required class="input dollar scroll-me" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
                   [(ngModel)]="consumableCost" name="consumableCost"></ion-input>
               </div>
             </div>
@@ -216,7 +216,7 @@
                 <p class="tight-squeeze small">(Serums or Lymphatic/Light)</p>
               </div>
               <div class="flex end">
-                <ion-input required class="input dollar" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                <ion-input required class="input dollar scroll-me" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
                   [(ngModel)]="boosterCost" name="boosterCost"></ion-input>
               </div>
             </div>
