@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild} from "@angular/core";
 import { NavController, Content } from "ionic-angular";
 import { Keyboard } from '@ionic-native/keyboard';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 
 @Component({
@@ -8,6 +9,8 @@ import { Keyboard } from '@ionic-native/keyboard';
   templateUrl: "home.html"
 })
 export class HomePage implements OnInit {
+
+  private screenOrientation: ScreenOrientation
   @ViewChild(Content) content: Content;
 
   
@@ -56,7 +59,10 @@ export class HomePage implements OnInit {
   fiveYG:string;
   fiveYP:string;
 
-  constructor(public navCtrl: NavController, private keyboard: Keyboard) {}
+  constructor(public navCtrl: NavController, private keyboard: Keyboard, screenOrientation: ScreenOrientation) {
+    this.screenOrientation = screenOrientation;
+  }
+
 
   ngOnInit() {
     this.hydraCI = 25000;
@@ -73,7 +79,13 @@ export class HomePage implements OnInit {
     this.liftPercent = 1.15;
     this.selectedValue = 'medium';
     this.calculateInvestment();
+    this.lockLandscape()
   }
+  lockLandscape = () => {
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+  }
+
+  //Scroll functions
   scrollBottomTimeout = () => {
     //scrollToBottom takes
     this.content.scrollToBottom(250)
@@ -87,7 +99,7 @@ export class HomePage implements OnInit {
  }, TIME_IN_MS);
  scrollTimeout;
   } 
-
+  //Calculations
   calculateInvestment() {
 
     this.totalCI = this.hydraCI * this.hydraMach;
@@ -95,14 +107,13 @@ export class HomePage implements OnInit {
     this.totCap = this.numberWithCommas(this.totalCI);
     this.netCap = this.numberWithCommas(this.netCapInv);
     this.treatmentVolume();
-    this.keyboard.close();
+    
   }
   treatmentVolume() {
     this.percentOfPat = this.percentPatient/100;
     this.projectedPPD = Math.round((this.clientsPerDiem * this.percentOfPat)*100)/100;
     this.totalWeeklyTreat = this.projectedPPD * this.daysOfOp;
     this.treatmentRevenue();
-    this.keyboard.close();
   }
   treatmentRevenue() {
     this.percentOfTreatMentBooster = this.percentBoost/100;
@@ -115,7 +126,6 @@ export class HomePage implements OnInit {
     this.weekLift = this.numberWithCommas(this.weeklyRevWithLift);
     this.averageGrossPerTreat = Math.round((this.weeklyRevWithLift / this.totalWeeklyTreat)*100)/100;
     this.investmentReturn();
-    this.keyboard.close();
   }
   investmentReturn() {
     this.monthlyGrossRev = Math.round((this.weeklyRevWithLift * 4.25)*100)/100;
@@ -128,7 +138,6 @@ export class HomePage implements OnInit {
     this.monthConsume = this.numberWithCommas(this.monthlyConsumableCost);
     this.monthNet = this.numberWithCommas(this.monthlyNetRev); 
     this.payoffBleu();
-    this.keyboard.close();
   }
   payoffBleu() {
     this.monthPayoff = this.roundNumber(this.netCapInv / this.monthlyNetRev);
@@ -142,10 +151,15 @@ export class HomePage implements OnInit {
     this.oneYP = this.numberWithCommas(this.oneYearProf);
     this.fiveYG = this.numberWithCommas(this.fiveYearGross);
     this.fiveYP = this.numberWithCommas(this.fiveYearProf);
-    this.keyboard.close();
+    this.hideKeyboard()
+    this.keyboard.close()
   }
 
   //Helper Functions
+  hideKeyboard = () => {
+    
+  }
+
   numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
@@ -164,6 +178,6 @@ export class HomePage implements OnInit {
     }
     this.calculateInvestment()
   }
-  
+ 
 }
 

@@ -90,5 +90,5 @@
     <allow-navigation href="http://10.199.115.195:8101" />
     <engine name="ios" spec="4.5.4" />
     <plugin name="cordova-plugin-ionic-webview" spec="^2.0.0-beta.1" />
-    <plugin name="cordova-plugin-screen-orientation" spec="~3.0.1" />
+    <plugin name="cordova-plugin-screen-orientation" spec="https://github.com/apache/cordova-plugin-screen-orientation" />
 </widget>

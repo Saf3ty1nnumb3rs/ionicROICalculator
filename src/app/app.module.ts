@@ -11,6 +11,7 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 Pro.init('2737E95B', {
   appVersion: '0.0.1'
@@ -56,7 +57,7 @@ export class MyErrorHandler implements ErrorHandler {
     StatusBar,
     SplashScreen,
     IonicErrorHandler,
-        [{ provide: ErrorHandler, useClass: MyErrorHandler }]
+        [{ provide: ErrorHandler, useClass: MyErrorHandler }, ScreenOrientation]
   ]
 })
 export class AppModule {}
