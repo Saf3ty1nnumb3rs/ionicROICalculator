@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { NavController } from "ionic-angular";
+import { Component, OnInit, ViewChild} from "@angular/core";
+import { NavController, Content } from "ionic-angular";
 import { Keyboard } from '@ionic-native/keyboard';
 
 
@@ -8,6 +8,10 @@ import { Keyboard } from '@ionic-native/keyboard';
   templateUrl: "home.html"
 })
 export class HomePage implements OnInit {
+  @ViewChild(Content) content: Content;
+
+  
+  
   hydraCI: number;
   hydraMach: number;
   totalCI: number;
@@ -70,6 +74,15 @@ export class HomePage implements OnInit {
     this.selectedValue = 'medium';
     this.calculateInvestment();
   }
+
+  bottomScroll = () => {
+    
+    let dimensions = this.content.getContentDimensions();
+    this.content.scrollTo(0, dimensions.scrollBottom, 0);
+    console.log(dimensions.scrollBottom)
+  
+    
+  } 
 
   calculateInvestment() {
 
