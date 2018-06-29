@@ -74,14 +74,18 @@ export class HomePage implements OnInit {
     this.selectedValue = 'medium';
     this.calculateInvestment();
   }
-
-  bottomScroll = () => {
-    
-    let dimensions = this.content.getContentDimensions();
-    this.content.scrollTo(0, dimensions.scrollBottom, 0);
-    console.log(dimensions.scrollBottom)
+  scrollBottomTimeout = () => {
+    //scrollToBottom takes
+    this.content.scrollToBottom(250)
+    console.log('Fire!!!!!')
+  }
   
-    
+  bottomScroll = () => {
+    let TIME_IN_MS = 290;
+    let scrollTimeout = setTimeout( () => {
+      this.scrollBottomTimeout()
+ }, TIME_IN_MS);
+ scrollTimeout;
   } 
 
   calculateInvestment() {
