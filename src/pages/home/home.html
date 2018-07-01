@@ -21,7 +21,7 @@
             </div>
             <div class="flex end">
               <ion-input required class="input dollar" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
-                [(ngModel)]="hydraCI" name="hydraCI"></ion-input>
+                [(ngModel)]="hydraCI" name="hydraCI" maxlength="5"></ion-input>
             </div>
           </div>
           <div class="flex">
@@ -30,7 +30,7 @@
             </div>
             <div class="non-dollar">
               <ion-input required class="input" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="hydraMach"
-                name="hydraMach"></ion-input>
+                name="hydraMach" maxlength="3"></ion-input>
             </div>
           </div>
           <div class="flex bold">
