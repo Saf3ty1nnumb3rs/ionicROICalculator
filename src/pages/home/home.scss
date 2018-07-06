@@ -166,7 +166,7 @@ page-home {
                 margin-left: 0;
               }
               ion-input.dollar.minus:last-child:before {
-                content: "-$";
+                content: "- $";
                 padding: 0 1px;
               }
               ion-input input.text-input-ios {
@@ -186,8 +186,9 @@ page-home {
                 font-weight: bold;
                 color: #ffffff;
               }
-              ion-input.no-border.large {
-                max-width: 6.2vw;
+              ion-input.no-border.large.dollar.minus {
+                max-width: 7.2vw;
+                min-width: 7vw;
               }
             }
             div.flex.bold {
@@ -370,9 +371,9 @@ form.grad#payoff {
       font-size: 1.3vw;
       font-weight: bold;
       div.no-border.bleu.large {
-        font-size: 2.2vw;
+        font-size: 2.8vw;
         font-weight: lighter;
-        font-family: "FuturaStd-Light", sans-serif;
+        font-family: "BebasNeue", sans-serif;
       }
     }
   }
@@ -398,9 +399,10 @@ form.grad#payoff {
       color: #43AAC5;
       font-weight: bold;
       div.no-border.bleu.large {
-        font-size: 2.2vw;
+        font-size: 2.8vw;
         font-weight: lighter;
-        font-family: "FuturaStd-Light", sans-serif;
+        font-family: "BebasNeue", sans-serif;
+        
       }
     }
   }
