@@ -75,8 +75,8 @@
                 Typical Patients/Clients per Day
               </div>
               <div class="non-dollar">
-                <ion-input required class="input scroll-me" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" (ionFocus)="bottomScroll()" [(ngModel)]="clientsPerDiem"
-                  name="clientsPerDiem"></ion-input>
+                <ion-input required class="input scroll-me" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                  (ionFocus)="bottomScroll()" [(ngModel)]="clientsPerDiem" name="clientsPerDiem"></ion-input>
               </div>
             </div>
             <div class="flex">
@@ -84,8 +84,8 @@
                 Percent of Patients/Clients That Could Use HydraFacial
               </div>
               <div class="non-dollar">
-                <ion-input required class="input percent scroll-me" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" (ionFocus)="bottomScroll()"
-                  [(ngModel)]="percentPatient" name="percentPatient"></ion-input>
+                <ion-input required class="input percent scroll-me" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                  (ionFocus)="bottomScroll()" [(ngModel)]="percentPatient" name="percentPatient"></ion-input>
               </div>
             </div>
             <div class="flex">
@@ -101,8 +101,8 @@
                 Days of Regular Operation
               </div>
               <div class="non-dollar">
-                <ion-input required class="input scroll-me" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" (ionFocus)="bottomScroll()" [(ngModel)]="daysOfOp"
-                  name="daysOfOp"></ion-input>
+                <ion-input required class="input scroll-me" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                  (ionFocus)="bottomScroll()" [(ngModel)]="daysOfOp" name="daysOfOp"></ion-input>
               </div>
             </div>
             <div class="flex total-bar" id="bottomless">
@@ -206,16 +206,9 @@
                 <p class="tight-squeeze small">(Serums and Tips Cost per Treatment)</p>
               </div>
               <div class="flex end">
-                <ion-input 
-                required 
-                class="input dollar scroll-me" 
-                type="number" 
-                (keyup.enter)="calculateInvestment()" 
-                (ionBlur)="calculateInvestment()" 
-                (ionFocus)="bottomScroll()"
-                [(ngModel)]="consumableCost" 
-                name="consumableCost">
-              </ion-input>
+                <ion-input required class="input dollar scroll-me" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                  (ionFocus)="bottomScroll()" [(ngModel)]="consumableCost" name="consumableCost">
+                </ion-input>
               </div>
             </div>
             <div class="flex bold">
@@ -224,15 +217,8 @@
                 <p class="tight-squeeze small">(Serums or Lymphatic/Light)</p>
               </div>
               <div class="flex end">
-                <ion-input 
-                required 
-                class="input dollar scroll-me" 
-                type="number" 
-                (keyup.enter)="calculateInvestment()" 
-                (ionBlur)="calculateInvestment()"
-                (ionFocus)="bottomScroll()"
-                [(ngModel)]="boosterCost" 
-                name="boosterCost">
+                <ion-input required class="input dollar scroll-me" type="number" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                  (ionFocus)="bottomScroll()" [(ngModel)]="boosterCost" name="boosterCost">
                 </ion-input>
               </div>
             </div>
@@ -286,43 +272,47 @@
         </form>
         <!--  ###### End Investment Return Block ###### -->
         <!--  ###### Begin Bleu Box Block ###### -->
-        <ion-grid id="bottom-right">
-          <ion-row class="tight-box top">
-            <ion-col class="square left left-top">
-              <p class="box-head">1 YEAR GROSS REVENUE</p>
-              <p class="box-bottom" *ngIf="oneYG">${{oneYG}}</p>
-            </ion-col>
-            <ion-col class="square right right-top">
-              <p class="box-head right">1 YEAR PROFIT</p>
-              <p class="box-bottom" *ngIf="oneYP">${{oneYP}}</p>
-            </ion-col>
-          </ion-row>
-          <ion-row class="tight-box bottom">
-            <ion-col class="square left left-bottom">
-              <p class="box-head">5 YEAR GROSS REVENUE</p>
-              <p class="box-bottom" *ngIf="fiveYG">${{fiveYG}}</p>
-            </ion-col>
-            <ion-col class="square right right-bottom">
-              <p class="box-head right">5 YEAR PROFIT</p>
-              <p class="box-bottom" *ngIf="fiveYP">${{fiveYP}}</p>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+        <div id="bottom-right">
+
+          <div class="left-top col">
+            <p class="box-head">1 YEAR GROSS REVENUE</p>
+            <p class="box-bottom" *ngIf="oneYG">${{oneYG}}</p>
+          </div>
+          <div class="divide-top"></div>
+          <div class="left-bottom col">
+            <p class="box-head">5 YEAR GROSS REVENUE</p>
+            <p class="box-bottom" *ngIf="fiveYG">${{fiveYG}}</p>
+          </div>
+
+          <div class="div-cen"></div>
+
+          <div class="right-top col">
+            <p class="box-head">1 YEAR PROFIT</p>
+            <p class="box-bottom" *ngIf="oneYP">${{oneYP}}</p>
+          </div>
+          <div class="divide-bottom"></div>
+          <div class="right-bottom col">
+            <p class="box-head">5 YEAR PROFIT</p>
+            <p class="box-bottom" *ngIf="fiveYP">${{fiveYP}}</p>
+          </div>
+
+        </div>
         <form class="grad" id="payoff">
           <div class="flex">
             <div class="content bleu">
-              Months To Payoff
+              Months To Pay Off
             </div>
             <div class="bleu">
-              <div *ngIf="monthPayoff" class="no-border bleu">{{monthPayoff}}</div>
+              <div *ngIf="monthPayoff" class="no-border bleu large">{{monthPayoff}}</div>
             </div>
           </div>
+          <div class="border"></div>
           <div class="flex bold bottomless">
             <div class="content bleu">
-              Treatments To Payoff
+              Treatments To Pay Off
             </div>
             <div class="bleu">
-              <div *ngIf="treatPayoff" class="no-border bleu">{{treatPayoff}}</div>
+              <div *ngIf="treatPayoff" class="no-border bleu large">{{treatPayoff}}</div>
             </div>
           </div>
         </form>
@@ -331,11 +321,11 @@
       <!-- ######### End Third Column ######################################## -->
     </ion-row>
     <div class="flex-bottom">
-        <div class="foot-left"></div>
-        <div class="foot-img">
-          <img src="./assets/imgs/Heyedra@2x.png" alt="i" />
-        </div>
-        <div class="foot-right"></div>
+      <div class="foot-left"></div>
+      <div class="foot-img">
+        <img src="./assets/imgs/Heyedra@2x.png" alt="i" />
+      </div>
+      <div class="foot-right"></div>
     </div>
   </ion-grid>
 </ion-content>

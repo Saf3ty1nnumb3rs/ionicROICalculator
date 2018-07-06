@@ -1,6 +1,5 @@
 page-home {
-  background-color: #ffffff;
-  // HEADER STYLES///////////////////////////////
+  background-color: #ffffff; // HEADER STYLES///////////////////////////////
   ion-header {
     background: #000;
     color: #C85EAD;
@@ -58,7 +57,7 @@ page-home {
             margin: -2px 8px 5px 8px;
           }
           .spacer {
-            margin-top: 10px;
+            margin-top: 3px;
             width: 100%;
           }
           .left-spacer {
@@ -109,9 +108,10 @@ page-home {
               }
               .end {
                 justify-content: flex-end;
-                width: 27%;
+                color: #666666;
+                width: 22%;
                 margin: 0;
-                padding-left:0;
+                padding-left: 0;
                 border-bottom: none;
                 height: auto;
               }
@@ -244,9 +244,8 @@ page-home {
               font-weight: bold;
               font-size: 1.38vw;
               line-height: 1.5vw;
-              padding:3px 0;
+              padding: 3px 0;
             }
-           
           }
           div.flex.total-bar#white {
             background-color: #fff;
@@ -260,8 +259,7 @@ page-home {
             border: 0.5px solid #43AAC5;
           }
         }
-      }
-      // ion-row.primary:after {
+      } // ion-row.primary:after {
       //   content: " ";
       //   margin: 109px auto;
       //   width: 90%;
@@ -272,7 +270,6 @@ page-home {
         justify-content: space-around;
         align-items: center;
         margin: 109px 2vw 0 2vw;
-        
         .foot-left,
         .foot-right {
           content: " ";
@@ -283,108 +280,128 @@ page-home {
     }
   } //   END PRIMARY BOX STYLES ///// 
   //   BOTTOM RIGHT BLUE BOX GRID STYLES ////////////////////////////////////////
-  ion-grid#bottom-right {
+  div#bottom-right {
+    display: grid;
+    grid-template-columns: 6fr 1px 6fr;
+    grid-template-rows: 6fr 1px 6fr;
+    grid-template-areas: "top-left divide-top top-right" "div-cen div-cen div-cen" "bottom-left divide-bottom bottom-right";
+    max-width: 400px;
     width: 100%;
     background: #43AAC5;
-    max-height: 23vw;
-    min-height: 22vw;
-    margin-top: 6.1vw;
-    ion-row.tight-box {
-      margin: 0 auto;
-      width: 100%;
-      height: 50%;
-      ion-col.square {
-        width: 50%;
-        height: 100%;
-        padding: 0;
-        margin: 0px auto;
-      }
-      ion-col.square.left {
-        border-right: 0.5px solid #fff;
-      }
-      ion-col.square.left-bottom,
-      ion-col.square.right-bottom {
-        margin-bottom: 30px;
-        height: 90%;
-        p.box-head {
-          margin: 0 auto;
-          line-height: 1.5vw;
-          padding-top: 20px;
-          font-family: "Helvetica", sans-serif;
-          font-size: 1.45vw;
-          color: #fff;
-          text-align: center;
-          height: 40%;
-        }
-        p.box-bottom {
-          padding-top: 14px;
-        }
-      }
-      ion-col.square.right-top,
-      ion-col.square.left-top {
-        margin-bottom: 0;
-        margin-top: 1.1vw;
-        height: 88%;
-        p.box-head {
-          margin: 0 auto;
-          line-height: 1.5vw;
-          padding-top: 5px;
-          font-family: "Helvetica", sans-serif;
-          font-size: 1.45vw;
-          color: #fff;
-          text-align: center;
-          height: 40%;
-        }
-      }
-    }
-    ion-row.tight-box.top:after {
-      content: " ";
-      margin: 0 auto;
-      width: 95%;
-      border-bottom: 0.5px solid #fff;
-      height: 0;
-    }
-    p.box-bottom {
-      font-family: "BebasNeue", sans-serif;
-      font-size: 3.4vw;
-      height: 40%;
-      color: #fff;
+    height: 33vh;
+    min-height: 250px;
+    margin-top: 4.3vw;
+    color: white;
+    div.left-top.col,
+    div.left-bottom.col,
+    div.right-top.col,
+    div.right-bottom.col {
       text-align: center;
-      padding: 0;
-      margin: 0;
+      display: flex-block;
+      justify-content: space-around;
+      p.box-head {
+        text-align: center;
+        line-height: 1.7vw;
+        font-family: "Helvetica", sans-serif;
+        font-size: 1.45vw;
+        height: 30%;
+      }
+      p.box-bottom {
+        // padding-top: 14px;
+        text-align: center;
+        margin: 0 auto;
+        font-family: "FuturaStd-Light", sans-serif;
+        font-size: 2.4vw;
+        letter-spacing: -0.15rem;
+        font-weight: 300;
+        height: 20%;
+      }
     }
-    p.box-head.right {
-      width: 50%;
+    
+    .left-top.col {
+      grid-area: top-left;
+    }
+    .divide-top {
+      grid-area: divide-top;
+      height: 100%;
+      width: 100%;
+      margin-top: 15px;
+      border: 1px solid #fff;
+    }
+    .left-bottom.col {
+      grid-area: bottom-left;
+    }
+    .div-cen {
+      grid-area: div-cen;
+      width: 90%;
+      height: 100%;
+      border: 1px solid #fff;
+      padding: 0 15px 0 15px;
+      margin: 0 auto;
+    }
+    .right-top.col {
+      grid-area: top-right;
+      p.box-head {
+        padding-top: 5%;
+      }
+    }
+    .divide-bottom {
+      grid-area: divide-bottom;
+      height: 90%;
+      width: 100%;
+      padding-bottom: 15px;
+      border: 1px solid #fff;
+    }
+    .right-bottom.col {
+      grid-area: bottom-right;
+      p.box-head {
+        padding-top: 5%;
+      }
     }
   }
-  form.grad#payoff {
-    border: 1px solid #43AAC5;
-    div.flex {
-      border-bottom: 0.5px solid #43AAC5;
-      .bleu {
-        color: #43AAC5;
-        font-size: 1.3vw;
-        font-weight: bold;
-      }
-    }
-    div.content.bleu {
+}
+
+form.grad#payoff {
+  border: 1px solid #43AAC5;
+  div.flex {
+    border-bottom: none; // border-bottom: 0.5px solid #43AAC5;
+    .bleu {
       color: #43AAC5;
-      font-family: "Helvetica", sans-serif;
+      font-size: 1.3vw;
+      font-weight: bold;
+      div.no-border.bleu.large {
+        font-size: 2.2vw;
+        font-weight: lighter;
+        font-family: "FuturaStd-Light", sans-serif;
+      }
+    }
+  }
+  div.border {
+    display: block;
+    height: 1px;
+    width: 90%;
+    margin: 0 auto;
+    border-bottom: 1px solid #43AAC5;
+  }
+  div.content.bleu {
+    color: #43AAC5;
+    font-family: "Helvetica", sans-serif;
+    font-size: 1.6vw;
+    height: auto;
+  }
+  div.flex.bold.bottomless {
+    border-bottom: none;
+    .content.bleu {
       font-size: 1.6vw;
-      height: auto;
     }
-    div.flex.bold.bottomless {
-      border-bottom: none;
-      .content.bleu{
-        font-size: 1.6vw;
-      }
-      .bleu {
-        color: #43AAC5;
-        font-size: 1.3vw;
-        font-weight: bold;
+    .bleu {
+      color: #43AAC5;
+      font-weight: bold;
+      div.no-border.bleu.large {
+        font-size: 2.2vw;
+        font-weight: lighter;
+        font-family: "FuturaStd-Light", sans-serif;
       }
     }
-   
-    
   }
 }
