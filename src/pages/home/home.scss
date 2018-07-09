@@ -1,3 +1,13 @@
+ion-loading.my-loading-class {
+  .loading-wrapper {
+    background: #000;
+    box-shadow: none;
+  }
+}
+
+[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"] {
+  background-color: #000;
+}
 #custom-overlay {
   display: flex;
   flex-direction: column;
