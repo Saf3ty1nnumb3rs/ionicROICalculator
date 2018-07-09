@@ -10,6 +10,8 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 })
 export class HomePage implements OnInit {
 
+  splash = true;
+
   private screenOrientation: ScreenOrientation
   @ViewChild(Content) content: Content;
 
@@ -63,6 +65,11 @@ export class HomePage implements OnInit {
     this.screenOrientation = screenOrientation;
   }
 
+  ionViewDidLoad() {
+    setTimeout(() => {
+      this.splash=false;
+    }, 7500)
+  }
 
   ngOnInit() {
     this.hydraCI = 25000;
