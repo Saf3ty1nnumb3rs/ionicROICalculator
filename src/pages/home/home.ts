@@ -83,7 +83,7 @@ export class HomePage implements OnInit {
     this.addBooster = 75;
     this.consumableCost = 25;
     this.boosterCost = 20;
-    this.liftPercent = 1.15;
+    this.liftPercent = 1.25;
     this.selectedValue = 'medium';
     this.calculateInvestment();
     this.lockLandscape()
@@ -180,8 +180,10 @@ export class HomePage implements OnInit {
       this.liftPercent = 1.25;
     }else if(val === 'high'){
       this.liftPercent = 1.35;
-    }else{
+    }else if(val === 'low'){
       this.liftPercent = 1.15;
+    }else{
+      this.liftPercent = 1.00;
     }
     this.calculateInvestment()
   }

@@ -148,6 +148,7 @@ page-home {
               .end {
                 justify-content: flex-end;
                 color: #666666;
+                font-size: 1.28vw;
                 width: 22%;
                 margin: 0;
                 padding-left: 0;
@@ -198,6 +199,9 @@ page-home {
               ion-input.dollar:last-child:before {
                 content: "$";
                 padding: 0 1px;
+                color: #666666;
+                font-size: 1.28vw;
+                line-height: 1.29vw;
               }
               ion-input.percent:last-child:after {
                 content: "%";
@@ -207,6 +211,9 @@ page-home {
               ion-input.dollar.minus:last-child:before {
                 content: "- $";
                 padding: 0 1px;
+                color: #666666;
+                font-size: 1.28vw;
+                line-height: 1.29vw;
               }
               ion-input input.text-input-ios {
                 margin: auto;
