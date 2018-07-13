@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild} from "@angular/core";
 import { NavController, Content } from "ionic-angular";
 import { Keyboard } from '@ionic-native/keyboard';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
-
+import { StatusBar } from '@ionic-native/status-bar';
+import {Platform} from 'ionic-angular';
 
 @Component({
   selector: "page-home",
@@ -61,8 +62,11 @@ export class HomePage implements OnInit {
   fiveYG:string;
   fiveYP:string;
 
-  constructor(public navCtrl: NavController, private keyboard: Keyboard, screenOrientation: ScreenOrientation) {
+  constructor(public navCtrl: NavController, private keyboard: Keyboard, screenOrientation: ScreenOrientation, statusBar: StatusBar, platform: Platform) {
     this.screenOrientation = screenOrientation;
+    platform.ready().then(async () => {
+    statusBar.hide();
+    })
   }
 
   ionViewDidLoad() {
