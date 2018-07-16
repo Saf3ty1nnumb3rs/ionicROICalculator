@@ -11,7 +11,7 @@ import {Platform} from 'ionic-angular';
 })
 export class HomePage implements OnInit {
 
-  splash = true;
+  
 
   private screenOrientation: ScreenOrientation
   @ViewChild(Content) content: Content;
@@ -52,7 +52,9 @@ export class HomePage implements OnInit {
   selectedValue:string;
   weekAll: string;
   weekLift: string;
+  averageGPT: string;
   totCap: string;
+  netRPT: string;
   netCap: string;
   monthGross: string;
   monthConsume: string;
@@ -69,16 +71,12 @@ export class HomePage implements OnInit {
     })
   }
 
-  ionViewDidLoad() {
-    setTimeout(() => {
-      this.splash=false;
-    }, 7500)
-  }
+  
 
   ngOnInit() {
     this.hydraCI = 25000;
     this.hydraMach = 2;
-    this.taxDisc = 1000;
+    this.taxDisc = 10000;
     this.clientsPerDiem = 10;
     this.percentPatient = 50;
     this.daysOfOp = 6;
@@ -132,22 +130,24 @@ export class HomePage implements OnInit {
       (this.totalWeeklyTreat * this.pricePerTreatment) +
       ((this.totalWeeklyTreat * this.percentOfTreatMentBooster) *
         this.addBooster);
-    this.weekAll = this.numberWithCommas(this.weeklyRevAll);
+    this.weekAll = this.numberWithCommas(this.weeklyRevAll.toFixed(2));
     this.weeklyRevWithLift = Math.round((this.weeklyRevAll * this.liftPercent)*100)/100;
-    this.weekLift = this.numberWithCommas(this.weeklyRevWithLift);
+    this.weekLift = this.numberWithCommas(this.weeklyRevWithLift.toFixed(2));
     this.averageGrossPerTreat = Math.round((this.weeklyRevWithLift / this.totalWeeklyTreat)*100)/100;
+    this.averageGPT = this.averageGrossPerTreat.toFixed(2);
     this.investmentReturn();
   }
   investmentReturn() {
-    this.monthlyGrossRev = Math.round((this.weeklyRevWithLift * 4.25)*100)/100;
+    this.monthlyGrossRev = Math.round((this.weeklyRevWithLift * 4.35)*100)/100;
     this.monthlyConsumableCost = Math.round(
       (((this.totalWeeklyTreat * this.consumableCost) + (this.boosterCost*this.totalWeeklyTreat))*4.25)*100)/100;
     this.monthlyNetRev = Math.round((this.monthlyGrossRev - this.monthlyConsumableCost)*100)/100;
     this.netRevPerTreatment = Math.round(
       (this.monthlyNetRev / (this.totalWeeklyTreat * 4.25))*100)/100;
-    this.monthGross = this.numberWithCommas(this.monthlyGrossRev);
-    this.monthConsume = this.numberWithCommas(this.monthlyConsumableCost);
-    this.monthNet = this.numberWithCommas(this.monthlyNetRev); 
+    this.netRPT = this.netRevPerTreatment.toFixed(2)  
+    this.monthGross = this.numberWithCommas(this.monthlyGrossRev.toFixed(2));
+    this.monthConsume = this.numberWithCommas(this.monthlyConsumableCost.toFixed(2));
+    this.monthNet = this.numberWithCommas(this.monthlyNetRev.toFixed(2)); 
     this.payoffBleu();
   }
   payoffBleu() {
@@ -163,12 +163,12 @@ export class HomePage implements OnInit {
     this.fiveYG = this.numberWithCommas(this.fiveYearGross);
     this.fiveYP = this.numberWithCommas(this.fiveYearProf);
     this.hideKeyboard()
-    this.keyboard.close()
+    
   }
 
   //Helper Functions
   hideKeyboard = () => {
-    
+    this.keyboard.close()
   }
 
   numberWithCommas = (x) => {

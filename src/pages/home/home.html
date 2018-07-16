@@ -1,6 +1,4 @@
-<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
-      <img src="./assets/imgs/HYD1844_ROI-Calc_AppSplashScreen_v3alt.gif">
-</div>
+
 
 <ion-header>
   <div>
@@ -195,7 +193,7 @@
               </div>
               <div class="flex end">
                 $
-                <div *ngIf="averageGrossPerTreat" class="no-border">{{averageGrossPerTreat}}</div>
+                <div *ngIf="averageGPT" class="no-border">{{averageGPT}}</div>
               </div>
             </div>
           </div>
@@ -270,7 +268,7 @@
               </div>
               <div class="flex end">
                 $
-                <div *ngIf="netRevPerTreatment" class="no-border">{{netRevPerTreatment}}</div>
+                <div *ngIf="netRPT" class="no-border">{{netRPT}}</div>
               </div>
             </div>
           </div>
