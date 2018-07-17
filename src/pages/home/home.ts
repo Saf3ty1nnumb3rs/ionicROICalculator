@@ -138,7 +138,7 @@ export class HomePage implements OnInit {
     this.investmentReturn();
   }
   investmentReturn() {
-    this.monthlyGrossRev = Math.round((this.weeklyRevWithLift * 4.35)*100)/100;
+    this.monthlyGrossRev = Math.round((this.weeklyRevWithLift * 4.25)*100)/100;
     this.monthlyConsumableCost = Math.round(
       (((this.totalWeeklyTreat * this.consumableCost) + (this.boosterCost*this.totalWeeklyTreat))*4.25)*100)/100;
     this.monthlyNetRev = Math.round((this.monthlyGrossRev - this.monthlyConsumableCost)*100)/100;
