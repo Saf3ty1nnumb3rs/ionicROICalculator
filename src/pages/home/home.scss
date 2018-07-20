@@ -1,13 +1,4 @@
-ion-loading.my-loading-class {
-  .loading-wrapper {
-    background: #000;
-    box-shadow: none;
-  }
-}
 
-[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"] {
-  background-color: #000;
-}
 #custom-overlay {
   display: flex;
   flex-direction: column;
@@ -172,12 +163,12 @@ page-home {
                 color: #666666;
                 line-height: 1.42vw;
               }
-              ion-input {
+              input {
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
               }
-              ion-input.input {
+              input.input {
                 background: #fff;
                 color: #666666;
                 border: 0.5px solid #666666;
@@ -189,33 +180,33 @@ page-home {
                 line-height: 1.42rem;
                 padding-top: 3px;
               }
-              ion-input.input.percent {
+              input.input.percent {
                 input.text-input-ios {
                   text-align: end;
                   margin-right: 3px;
                   padding-right: 1px;
                 }
               }
-              ion-input.dollar:last-child:before {
+              input.dollar:last-child:before {
                 content: "$";
                 padding: 0 1px;
                 color: #666666;
                 font-size: 1.28vw;
                 line-height: 1.29vw;
               }
-              ion-input.percent:last-child:after {
+              input.percent:last-child:after {
                 content: "%";
                 padding-right: 2px;
                 margin-left: 0;
               }
-              ion-input.dollar.minus:last-child:before {
+              input.dollar.minus:last-child:before {
                 content: "- $";
                 padding: 0 1px;
                 color: #666666;
                 font-size: 1.28vw;
                 line-height: 1.29vw;
               }
-              ion-input input.text-input-ios {
+              input input.text-input-ios {
                 margin: auto;
                 text-align: center;
                 font-size: 1.28vw;
@@ -232,7 +223,7 @@ page-home {
                 font-weight: bold;
                 color: #ffffff;
               }
-              ion-input.no-border.large.dollar.minus {
+              input.no-border.large.dollar.minus {
                 max-width: 7.2vw;
                 min-width: 7vw;
               }
@@ -249,7 +240,7 @@ page-home {
             }
             div.flex.bottomless {
               border-bottom: none;
-              .ion-input-select,
+              .input-select,
               select {
                 -webkit-appearance: none;
                 background-repeat: no-repeat;

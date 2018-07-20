@@ -204,5 +204,4 @@ export class HomePage implements OnInit {
     }
     this.calculateInvestment();
   }
-
 }
