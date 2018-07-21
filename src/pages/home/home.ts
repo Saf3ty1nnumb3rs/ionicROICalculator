@@ -121,7 +121,7 @@ export class HomePage implements OnInit {
     this.percentOfPat = this.percentPatient / 100;
     this.projectedPPD =
       Math.round(this.clientsPerDiem * this.percentOfPat * 100) / 100;
-    this.totalWeeklyTreat = this.projectedPPD * this.daysOfOp;
+    this.totalWeeklyTreat = this.roundNumber(this.projectedPPD * this.daysOfOp);
     this.treatmentRevenue();
   }
   treatmentRevenue() {
@@ -203,5 +203,24 @@ export class HomePage implements OnInit {
       this.liftPercent = 1.0;
     }
     this.calculateInvestment();
+  }
+
+
+  moveCursorToEnd = (e) => {
+    event.preventDefault()
+    console.log('hello')
+    const x = document.querySelectorAll("input")[e]
+    console.log(x)
+    if(!x.value.length){
+      let leng = x.maxLength
+      console.log(x.maxLength)
+      x.setSelectionRange(leng, leng)
+    }else if(x.value){
+    const leng = x.value.length
+    x.setSelectionRange(leng, leng)
+    }else{
+      const leng = 5
+      x.setSelectionRange(leng, leng)
+    }
   }
 }

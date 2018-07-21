@@ -187,7 +187,7 @@ page-home {
                   padding-right: 1px;
                 }
               }
-              input.dollar:last-child:before {
+              input.dollar:before {
                 content: "$";
                 padding: 0 1px;
                 color: #666666;
@@ -199,7 +199,7 @@ page-home {
                 padding-right: 2px;
                 margin-left: 0;
               }
-              input.dollar.minus:last-child:before {
+              input.dollar.minus:before {
                 content: "- $";
                 padding: 0 1px;
                 color: #666666;
