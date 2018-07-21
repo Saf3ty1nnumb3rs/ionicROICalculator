@@ -20,8 +20,8 @@
               HydraFacial Capital Investment
             </div>
             <div class="flex end">
-              <input required id="hydraCI" class="input dollar" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
-                [(ngModel)]="hydraCI" pattern="[0-9]*" value=25000 name="hydraCI" (click)="moveCursorToEnd('0')" maxlength="5" />
+              <span class="currency">$<input required id="hydraCI" class="input no-border dollar large inner" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                [(ngModel)]="hydraCI" pattern="[0-9]*" value=25000 name="hydraCI" (click)="moveCursorToEnd('0')" maxlength="5" /></span>
 
             </div>
           </div>
@@ -30,7 +30,7 @@
               Number of HydraFacial Machines
             </div>
             <div class="non-dollar">
-              <input required class="input" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="hydraMach"
+              <input required class="input solo" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()" [(ngModel)]="hydraMach"
                 name="hydraMach" maxlength="3" (click)="moveCursorToEnd('1')" pattern="[0-9]*" />
 
             </div>
@@ -52,8 +52,8 @@
               Section 179 Tax Discounts
             </div>
             <div class="flex end">
-              <input required class="no-border large dollar minus" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
-                [(ngModel)]="taxDisc" (click)="moveCursorToEnd('2')" value=10000 maxlength=5 name="taxDisc" pattern="[0-9]*" />
+              -<span class="currency">$<input required class="input no-border dollar large inner" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                [(ngModel)]="taxDisc" (click)="moveCursorToEnd('2')" value=10000 maxlength=5 name="taxDisc" pattern="[0-9]*" /></span>
 
             </div>
           </div>
@@ -78,7 +78,7 @@
                 Typical Patients/Clients per Day
               </div>
               <div class="non-dollar">
-                <input required class="input scroll-me" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                <input required class="input solo scroll-me" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
                   (ionFocus)="bottomScroll()" [(ngModel)]="clientsPerDiem" (click)="moveCursorToEnd('3')" value=10 name="clientsPerDiem" pattern="[0-9]*"
                 />
 
@@ -89,9 +89,9 @@
                 Percent of Patients/Clients That Could Use HydraFacial
               </div>
               <div class="non-dollar">
-                <input required class="input percent scroll-me" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                <span class="percentage"><input required class="input percent scroll-me" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
                   (ionFocus)="bottomScroll()" [(ngModel)]="percentPatient" (click)="moveCursorToEnd('4')" value=50 name="percentPatient" pattern="[0-9]*"
-                />
+                />%</span>
 
               </div>
             </div>
@@ -108,7 +108,7 @@
                 Days of Regular Operation
               </div>
               <div class="non-dollar">
-                <input required class="input scroll-me" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                <input required class="input solo scroll-me" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
                   (ionFocus)="bottomScroll()" [(ngModel)]="daysOfOp" (click)="moveCursorToEnd('5')" value=6 name="daysOfOp" pattern="[0-9]*" />
 
               </div>
@@ -135,8 +135,8 @@
               Price Per Treatment
             </div>
             <div class="flex end">
-              <input required class="input dollar" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
-                [(ngModel)]="pricePerTreatment" value=150 (click)="moveCursorToEnd('6')" name="pricePerTreatment" pattern="[0-9]*" />
+              <span class="currency small-number">$<input required class="input inner" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                [(ngModel)]="pricePerTreatment" value=150 (click)="moveCursorToEnd('6')" name="pricePerTreatment" pattern="[0-9]*" maxlength="3" /></span>
 
             </div>
           </div>
@@ -146,8 +146,8 @@
               Percent of Treatment with Added Booster
             </div>
             <div class="non-dollar">
-              <input required class="input percent" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
-                [(ngModel)]="percentBoost" (click)="moveCursorToEnd('7')" name="percentBoost" value=20 pattern="[0-9]*" />
+              <span class="percentage"><input required class="input percent" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                [(ngModel)]="percentBoost" (click)="moveCursorToEnd('7')" name="percentBoost" value=20 pattern="[0-9]*" />%</span>
 
             </div>
           </div>
@@ -156,8 +156,8 @@
               Additional Booster Revenue/Treatment
             </div>
             <div class="flex end">
-              <input required class="input dollar" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
-                [(ngModel)]="addBooster" (click)="moveCursorToEnd('8')" value=75 name="addBooster" pattern="[0-9]*" />
+              <span class="currency small-number">$<input required class="input inner" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                [(ngModel)]="addBooster" (click)="moveCursorToEnd('8')" value=75 name="addBooster" pattern="[0-9]*" /></span>
 
             </div>
           </div>
@@ -218,9 +218,9 @@
                 <p class="tight-squeeze small">(Serums and Tips Cost per Treatment)</p>
               </div>
               <div class="flex end">
-                <input required class="input dollar scroll-me" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                <span class="currency small-number">$<input required class="input scroll-me" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
                   (ionFocus)="bottomScroll()" (click)="moveCursorToEnd('9')" [(ngModel)]="consumableCost" value=25 name="consumableCost" pattern="[0-9]*"
-                />
+                /></span>
               </div>
 
             </div>
@@ -230,8 +230,8 @@
                 <p class="tight-squeeze small">(Serums or Lymphatic/Light)</p>
               </div>
               <div class="flex end">
-                <input required class="input dollar scroll-me" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
-                  (ionFocus)="bottomScroll()" (click)="moveCursorToEnd('10')"  [(ngModel)]="boosterCost" value=20 name="boosterCost" pattern="[0-9]*" />
+                <span class="currency small-number">$<input required class="input scroll-me" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                  (ionFocus)="bottomScroll()" (click)="moveCursorToEnd('10')"  [(ngModel)]="boosterCost" value=20 name="boosterCost" pattern="[0-9]*" /></span>
 
               </div>
             </div>
