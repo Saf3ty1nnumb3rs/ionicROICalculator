@@ -20,7 +20,7 @@
               HydraFacial Capital Investment
             </div>
             <div class="flex end">
-              <span class="currency">$<input required id="hydraCI" class="input no-border dollar large inner" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+              <span class="currency large">$<input required id="hydraCI" class="input no-border dollar large inner" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
                 [(ngModel)]="hydraCI" pattern="[0-9]*" value=25000 name="hydraCI" (click)="moveCursorToEnd('0')" maxlength="5" /></span>
 
             </div>
@@ -52,7 +52,7 @@
               Section 179 Tax Discounts
             </div>
             <div class="flex end">
-              -<span class="currency">$<input required class="input no-border dollar large inner" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+              -<span class="currency large">$<input required class="input no-border dollar large inner" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
                 [(ngModel)]="taxDisc" (click)="moveCursorToEnd('2')" value=10000 maxlength=5 name="taxDisc" pattern="[0-9]*" /></span>
 
             </div>

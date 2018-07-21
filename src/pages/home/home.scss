@@ -181,7 +181,12 @@ page-home {
                 border-radius: 3px;
                 text-align: center;
                 margin-left: 2px;
-                max-width: 6.3vw
+                max-width: 6.6vw;
+              }
+              span.currency.large {
+                margin-left: 3px;
+                padding-left: 3px;
+                max-width: 6.6vw;
               }
               span.currency.small-number {
                 max-width: 5.2vw;
@@ -275,9 +280,10 @@ page-home {
                 padding-right: 0;
                 margin: 0;
               }
-              input.no-border.large.dollar.sub {
+              input.no-border.large.dollar {
                 max-width: 6vw;
-                padding-right: 1px;
+                padding-left: 0px;
+                text-align: center;
               }
             }
             div.flex.bold {
