@@ -48,6 +48,14 @@
             Additional Discounts
           </div>
           <div class="flex bold">
+              <div class="content">
+                Apply Section 179 Discount
+              </div>
+              <div class="flex end">
+                <input type="checkbox" name="discountPercent" ng-true-value=.35 ng-false-value=0 [(ngModel)]="discountPercent" class="no-border" (click)="calculateInvestment()">
+              </div>
+            </div>
+          <div class="flex bold">
             <div class="content">
               Section 179 Tax Discounts
             </div>
