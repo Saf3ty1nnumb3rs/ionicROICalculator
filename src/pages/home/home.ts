@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, Input } from "@angular/core";
 import { NavController, Content } from "ionic-angular";
 import { Keyboard } from "@ionic-native/keyboard";
 import { ScreenOrientation } from "@ionic-native/screen-orientation";
@@ -77,8 +77,6 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.hydraCI = 25000;
     this.hydraMach = 2;
-    this.discountPercent = 0;
-    this.taxDisc = 0;
     this.projectedHTD = 3;
     this.daysOfOp = 6;
     this.pricePerTreatment = 150;
@@ -112,7 +110,9 @@ export class HomePage implements OnInit {
   //Calculations
   calculateInvestment() {
     this.totalCI = this.hydraCI * this.hydraMach;
-    this.taxDisc = this.totalCI * this.discountPercent
+    console.log(this.discountPercent)
+    this.taxDisc = this.roundNumber(this.totalCI * this.discountPercent)
+    console.log('Tax Discount', this.taxDisc + ' and ' + this.discountPercent)
     this.netCapInv = this.totalCI - this.taxDisc;
     this.totCap = this.numberWithCommas(this.totalCI);
     this.netCap = this.numberWithCommas(this.netCapInv);
@@ -124,6 +124,7 @@ export class HomePage implements OnInit {
   }
   treatmentRevenue() {
     this.percentOfTreatMentBooster = this.percentBoost / 100;
+    console.log('% of treatment' ,this.percentOfTreatMentBooster)
     this.addRevenue = this.roundNumber(this.totalWeeklyTreat * this.percentOfTreatMentBooster * this.addBooster);
     this.weeklyRevAll =
       this.totalWeeklyTreat * this.pricePerTreatment + this.addRevenue;
@@ -203,6 +204,12 @@ export class HomePage implements OnInit {
     this.calculateInvestment();
   }
 
+  calculateDiscount(x, y) {
+    const z = document.querySelectorAll('checkbox')[y]
+    console.log(z)
+    this.discountPercent = x;
+    this.calculateInvestment();
+  }
 
   moveCursorToEnd = (e) => {
     event.preventDefault()

@@ -60,6 +60,9 @@ page-home {
       font-size: 53px;
     }
   } //END HEADER STYLES //////////BEGIN GRID/COLUMN/ROW STYLES/////////////////////
+  ion-list.list.list-ios{
+    margin: 0!important;
+  }
   ion-content[padding] {
     img {
       width: 50px;
@@ -96,7 +99,7 @@ page-home {
           }
           #bottom-box {
             width: 100%;
-            margin-top: 6.6vw;
+            margin-top: 4.6vw;
           } //   END G/C/R STYLES ///////////////////////////////////////////////
           //   PRIMARY BOX STYLES /////////////////////////////////////////////
           form.grad.top {
