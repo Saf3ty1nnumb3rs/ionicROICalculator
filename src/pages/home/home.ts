@@ -18,16 +18,16 @@ export class HomePage implements OnInit {
   hydraCI: number;
   hydraMach: number;
   totalCI: number;
+  discountPercent: number;
   taxDisc: number;
   netCapInv: number;
-  clientsPerDiem: number;
-  percentOfPat: number;
-  projectedPPD: number;
+  projectedHTD: number;
   daysOfOp: number;
   totalWeeklyTreat: number;
   pricePerTreatment: number;
   percentOfTreatMentBooster: number;
   addBooster: number;
+  addRevenue: number;
   weeklyRevAll: number;
   weeklyRevWithLift: number;
   averageGrossPerTreat: number;
@@ -77,9 +77,9 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.hydraCI = 25000;
     this.hydraMach = 2;
-    this.taxDisc = 10000;
-    this.clientsPerDiem = 10;
-    this.percentPatient = 50;
+    this.discountPercent = 0;
+    this.taxDisc = 0;
+    this.projectedHTD = 3;
     this.daysOfOp = 6;
     this.pricePerTreatment = 150;
     this.percentBoost = 20;
@@ -112,23 +112,21 @@ export class HomePage implements OnInit {
   //Calculations
   calculateInvestment() {
     this.totalCI = this.hydraCI * this.hydraMach;
+    this.taxDisc = this.totalCI * this.discountPercent
     this.netCapInv = this.totalCI - this.taxDisc;
     this.totCap = this.numberWithCommas(this.totalCI);
     this.netCap = this.numberWithCommas(this.netCapInv);
     this.treatmentVolume();
   }
   treatmentVolume() {
-    this.percentOfPat = this.percentPatient / 100;
-    this.projectedPPD =
-      Math.round(this.clientsPerDiem * this.percentOfPat * 100) / 100;
-    this.totalWeeklyTreat = this.roundNumber(this.projectedPPD * this.daysOfOp);
+    this.totalWeeklyTreat = this.roundNumber(this.projectedHTD * this.daysOfOp);
     this.treatmentRevenue();
   }
   treatmentRevenue() {
     this.percentOfTreatMentBooster = this.percentBoost / 100;
+    this.addRevenue = this.roundNumber(this.totalWeeklyTreat * this.percentOfTreatMentBooster * this.addBooster);
     this.weeklyRevAll =
-      this.totalWeeklyTreat * this.pricePerTreatment +
-      this.totalWeeklyTreat * this.percentOfTreatMentBooster * this.addBooster;
+      this.totalWeeklyTreat * this.pricePerTreatment + this.addRevenue;
     this.weekAll = this.numberWithCommas(this.weeklyRevAll.toFixed(2));
     this.weeklyRevWithLift =
       Math.round(this.weeklyRevAll * this.liftPercent * 100) / 100;

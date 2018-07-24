@@ -52,9 +52,8 @@
               Section 179 Tax Discounts
             </div>
             <div class="flex end">
-              -<span class="currency large">$<input required class="input no-border dollar large inner" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
-                [(ngModel)]="taxDisc" (click)="moveCursorToEnd('2')" value=10000 maxlength=5 name="taxDisc" pattern="[0-9]*" /></span>
-
+              -$
+                <div *ngIf="taxDisc" class="no-border">{{taxDisc}}</div>
             </div>
           </div>
           <p class="obl">Note: Consult Your Tax Professional</p>
@@ -74,33 +73,13 @@
           <p class="head">Treatment Volume</p>
           <form class="grad top">
             <div class="flex">
-              <div class="content">
-                Typical Patients/Clients per Day
-              </div>
-              <div class="non-dollar">
-                <input required class="input solo scroll-me" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
-                  (ionFocus)="bottomScroll()" [(ngModel)]="clientsPerDiem" (click)="moveCursorToEnd('3')" value=10 name="clientsPerDiem" pattern="[0-9]*"
-                />
-
-              </div>
-            </div>
-            <div class="flex">
-              <div class="content med-width">
-                Percent of Patients/Clients That Could Use HydraFacial
-              </div>
-              <div class="non-dollar">
-                <span class="percentage"><input required class="input percent scroll-me" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
-                  (ionFocus)="bottomScroll()" [(ngModel)]="percentPatient" (click)="moveCursorToEnd('4')" value=50 name="percentPatient" pattern="[0-9]*"
-                />%</span>
-
-              </div>
-            </div>
-            <div class="flex">
               <div class="content med-width">
                 Projected HydraFacial Treatments per Day
               </div>
               <div class="non-dollar">
-                <div *ngIf="projectedPPD" class="no-border center">{{projectedPPD}}</div>
+                <input required class="input solo scroll-me" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
+                  (ionFocus)="bottomScroll()" [(ngModel)]="projectedHTD" (click)="moveCursorToEnd('3')" value=3 name="projectedHTD" pattern="[0-9]*"
+                />
               </div>
             </div>
             <div class="flex bottomless">
@@ -140,7 +119,7 @@
 
             </div>
           </div>
-          <p class="obl">Base on Standard or Signature Treatments</p>
+          <p class="obl">Base on Signature Treatments</p>
           <div class="flex">
             <div class="content narrow">
               Percent of Treatment with Added Booster
@@ -159,6 +138,15 @@
               <span class="currency small-number">$<input required class="input inner" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
                 [(ngModel)]="addBooster" (click)="moveCursorToEnd('8')" value=75 name="addBooster" pattern="[0-9]*" /></span>
 
+            </div>
+          </div>
+          <div class="flex">
+            <div class="content narrow">
+              Additional Revenue from Lights/Lymphatic
+            </div>
+            <div class="flex end">
+              $
+              <div *ngIf="addRevenue" class="no-border">{{addRevenue}}</div>
             </div>
           </div>
           <div class="flex">
@@ -227,7 +215,7 @@
             <div class="flex bold">
               <div class="content">
                 <p class="tight-squeeze">Booster Costs</p>
-                <p class="tight-squeeze small">(Serums or Lymphatic/Light)</p>
+                <p class="tight-squeeze small">(Serum Cost per Treatment)</p>
               </div>
               <div class="flex end">
                 <span class="currency small-number">$<input required class="input scroll-me" type="text" (keyup.enter)="calculateInvestment()" (ionBlur)="calculateInvestment()"
