@@ -1,15 +1,14 @@
-
 #custom-overlay {
   display: flex;
   flex-direction: column;
-  justify-content: center;  
+  justify-content: center;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 100000;
-  width:100vw;
+  width: 100vw;
   height: 100vh;
   background-image: url('./assets/imgs/splash.png');
   background-size: cover;
@@ -21,15 +20,13 @@
 #custom-overlay img {
   display: block;
   margin: 0 auto;
-  width:100vw;
+  width: 100vw;
   height: 100vh;
   height: auto;
 }
-page-home {
-  background-color: #ffffff; 
 
-  
-  // HEADER STYLES///////////////////////////////
+page-home {
+  background-color: #ffffff; // HEADER STYLES///////////////////////////////
   ion-header {
     background: #000;
     color: #C85EAD;
@@ -60,8 +57,20 @@ page-home {
       font-size: 53px;
     }
   } //END HEADER STYLES //////////BEGIN GRID/COLUMN/ROW STYLES/////////////////////
-  ion-list.list.list-ios{
-    margin: 0!important;
+  ion-list.list.list-ios {
+    margin: 0 !important;
+  }
+  div.discount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5vw;
+    margin: 0 auto;
+    width: 98%;
+    padding: 0 8px;
+    font-size: 1.4vw;
+    color: #666666;
+    line-height: 1.42vw;
   }
   ion-content[padding] {
     img {
@@ -94,7 +103,7 @@ page-home {
             width: 100%;
           }
           .left-spacer {
-            margin-top: 3vw;
+            margin-top: 100px;
             width: 100%;
           }
           #bottom-box {
@@ -195,7 +204,7 @@ page-home {
                 max-width: 5.2vw;
               }
               input.input {
-                background:transparent;
+                background: transparent;
                 color: #666666;
                 max-width: 4.8vw;
                 min-width: 3.5vw;
@@ -220,15 +229,14 @@ page-home {
                 max-width: 4.5vw;
               }
               input.input.percent {
-                  text-align: end;
-                  margin-right: 3px;
-                  padding-right: 1px;
-                  border: none;
-                  max-width: 3.4vw;
+                text-align: end;
+                margin-right: 3px;
+                padding-right: 1px;
+                border: none;
+                max-width: 3.4vw;
               }
               input.input.inner {
                 border: none;
-                
               }
               input.input.solo {
                 border: 1px solid #666666;
@@ -416,7 +424,6 @@ page-home {
         height: 20%;
       }
     }
-    
     .left-top.col {
       grid-area: top-left;
     }
@@ -500,7 +507,6 @@ form.grad#payoff {
         font-size: 2.8vw;
         font-weight: lighter;
         font-family: "BebasNeue", sans-serif;
-        
       }
     }
   }

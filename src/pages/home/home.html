@@ -14,7 +14,7 @@
       <ion-col class="block">
         <!--  ####### Capital Equipment Block ###### -->
         <p class="head">Capital Equipment</p>
-        <form class="grad top" name="capitalEquipment">
+        <form class="grad top">
           <div class="flex">
             <div class="content">
               HydraFacial Capital Investment
@@ -55,14 +55,11 @@
               <ion-list-header>
                 Apply Section 179 Discount
               </ion-list-header>
-              <ion-item>
-                <ion-label>0%</ion-label>
-                <ion-radio type="radio" checked="true" name="discountPercent" [(ngModel)]="discountPercent" class="no-border checkbox" (click)="calculateDiscount(0, 0)"></ion-radio>
-              </ion-item>
-              <ion-item>
-                <ion-label>35%</ion-label>
-                <ion-radio type="radio" name="discountPercent" [(ngModel)]="discountPercent" class="no-border checkbox" (click)="calculateDiscount(.35, 1)"></ion-radio>
-              </ion-item>
+             
+              <div class="discount">
+                <label>Apply 35% Discount</label>
+                <input type="checkbox" class="no-border checkbox" (click)="calculateDiscount(0)">
+              </div>
             </ion-list>
           </div>
           <div class="flex total-bar" id="bottomless">

@@ -1,8 +1,9 @@
 {
   "name": "hydrafacialROICalculator",
-  "app_id": "2737e95b",
-  "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "type": "ionic-angular",
+  "pro_id": "2737e95b",
+  "app_id": ""
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { NavController, Content } from "ionic-angular";
 import { Keyboard } from "@ionic-native/keyboard";
 import { ScreenOrientation } from "@ionic-native/screen-orientation";
@@ -18,7 +18,8 @@ export class HomePage implements OnInit {
   hydraCI: number;
   hydraMach: number;
   totalCI: number;
-  discountPercent: number;
+  discountPercent: boolean;
+  discount: number;
   taxDisc: number;
   netCapInv: number;
   projectedHTD: number;
@@ -76,6 +77,7 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.hydraCI = 25000;
+    this.discount = 0;
     this.hydraMach = 2;
     this.projectedHTD = 3;
     this.daysOfOp = 6;
@@ -86,6 +88,7 @@ export class HomePage implements OnInit {
     this.boosterCost = 20;
     this.liftPercent = 1.25;
     this.selectedValue = "medium";
+    this.discountPercent = false;
     this.calculateInvestment();
     this.lockLandscape();
   }
@@ -109,10 +112,15 @@ export class HomePage implements OnInit {
   };
   //Calculations
   calculateInvestment() {
+    if(this.discountPercent === true){
+      this.discount = 0.35
+    }else{
+      this.discount = 0
+    }
     this.totalCI = this.hydraCI * this.hydraMach;
     console.log(this.discountPercent)
-    this.taxDisc = this.roundNumber(this.totalCI * this.discountPercent)
-    console.log('Tax Discount', this.taxDisc + ' and ' + this.discountPercent)
+    this.taxDisc = this.roundNumber(this.totalCI * this.discount)
+    console.log('Tax Discount', this.taxDisc + ' and ' + this.discount)
     this.netCapInv = this.totalCI - this.taxDisc;
     this.totCap = this.numberWithCommas(this.totalCI);
     this.netCap = this.numberWithCommas(this.netCapInv);
@@ -204,10 +212,10 @@ export class HomePage implements OnInit {
     this.calculateInvestment();
   }
 
-  calculateDiscount(x, y) {
-    const z = document.querySelectorAll('checkbox')[y]
+  calculateDiscount(x) {
+    const z = document.querySelectorAll('.checkbox')[x]
     console.log(z)
-    this.discountPercent = x;
+    this.discountPercent = !this.discountPercent;
     this.calculateInvestment();
   }
 

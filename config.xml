@@ -100,6 +100,8 @@
     <plugin name="cordova-plugin-screen-orientation" spec="https://github.com/apache/cordova-plugin-screen-orientation" />
     <plugin name="cordova-custom-config" spec="^5.0.2" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
-    <engine name="ios" spec="4.5.4" />
     <allow-navigation href="http://192.168.1.209:8101" />
+    <allow-navigation href="http://10.231.240.55:8100" />
+    <allow-navigation href="http://10.231.240.55:8101" />
+    <engine name="ios" spec="^4.5.4" />
 </widget>

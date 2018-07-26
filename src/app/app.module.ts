@@ -44,7 +44,7 @@ export class MyErrorHandler implements ErrorHandler {
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp, {scrollAssist: false}),
+    IonicModule.forRoot(MyApp, {scrollAssist: false})
   ],
   bootstrap: [IonicApp],
   entryComponents: [
