@@ -59,18 +59,24 @@ page-home {
   } //END HEADER STYLES //////////BEGIN GRID/COLUMN/ROW STYLES/////////////////////
   ion-list.list.list-ios {
     margin: 0 !important;
+    .checkbox {
+      margin-right: 8px;
+    }
   }
   div.discount {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 5vw;
+    height: 4vw;
     margin: 0 auto;
     width: 98%;
-    padding: 0 8px;
     font-size: 1.4vw;
     color: #666666;
     line-height: 1.42vw;
+  }
+  div.discount.end {
+    justify-content: flex-end;
+    padding-right: 8px;
   }
   ion-content[padding] {
     img {
@@ -103,7 +109,7 @@ page-home {
             width: 100%;
           }
           .left-spacer {
-            margin-top: 100px;
+            margin-top: 38px;
             width: 100%;
           }
           #bottom-box {
@@ -151,12 +157,21 @@ page-home {
               .end {
                 justify-content: flex-end;
                 color: #666666;
-                font-size: 1.28vw;
+                font-size: 1.4vw;
                 width: 24%;
                 margin: 0;
                 padding-left: 0;
                 border-bottom: none;
                 height: auto;
+              }
+              .end.centered {
+                text-align: center;
+                justify-content: center;
+                max-width: 5vw;
+                padding-right: 8px;
+                margin: 0;
+                font-size: 1.4vw;
+                line-height: 1.42rem;
               }
               .non-dollar {
                 padding-right: 8px;
@@ -174,7 +189,7 @@ page-home {
                 font-family: "Helvetica", sans-serif;
                 font-size: 1.4vw;
                 color: #666666;
-                line-height: 1.42vw;
+                line-height: 1.42rem;
               }
               input {
                 display: flex;
@@ -274,7 +289,7 @@ page-home {
               div.no-border {
                 border: none;
                 background: transparent;
-                font-size: 1.28vw;
+                font-size: 1.4vw;
                 color: #666666;
               }
               div.no-border.white {
@@ -303,6 +318,10 @@ page-home {
               align-items: center;
               min-height: 4vw;
               border-bottom: none;
+            }
+            div.flex.bold.stack {
+              display: block;
+              height: auto;
             }
             .small {
               font-size: 1.1vw;

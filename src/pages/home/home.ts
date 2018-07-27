@@ -23,10 +23,13 @@ export class HomePage implements OnInit {
   taxDisc: number;
   netCapInv: number;
   projectedHTD: number;
+  projectedTDT: number;
   daysOfOp: number;
   totalWeeklyTreat: number;
   pricePerTreatment: number;
-  percentOfTreatMentBooster: number;
+  percentOfTreatmentBooster: number;
+  percentOfTreatmentLights: number;
+  addLights: number;
   addBooster: number;
   addRevenue: number;
   weeklyRevAll: number;
@@ -46,7 +49,9 @@ export class HomePage implements OnInit {
   fiveYearProf: number;
   percentPatient: number;
   percentBoost: number;
+  percentLight: number;
   liftPercent: number;
+  taxDisp: string;
   selectedValue: string;
   weekAll: string;
   weekLift: string;
@@ -83,7 +88,9 @@ export class HomePage implements OnInit {
     this.daysOfOp = 6;
     this.pricePerTreatment = 150;
     this.percentBoost = 20;
+    this.percentLight = 15;
     this.addBooster = 75;
+    this.addLights = 50;
     this.consumableCost = 25;
     this.boosterCost = 20;
     this.liftPercent = 1.25;
@@ -121,19 +128,28 @@ export class HomePage implements OnInit {
     console.log(this.discountPercent)
     this.taxDisc = this.roundNumber(this.totalCI * this.discount)
     console.log('Tax Discount', this.taxDisc + ' and ' + this.discount)
+    this.taxDisp = this.numberWithCommas(this.taxDisc);
     this.netCapInv = this.totalCI - this.taxDisc;
     this.totCap = this.numberWithCommas(this.totalCI);
     this.netCap = this.numberWithCommas(this.netCapInv);
     this.treatmentVolume();
   }
+
+
   treatmentVolume() {
-    this.totalWeeklyTreat = this.roundNumber(this.projectedHTD * this.daysOfOp);
+    this.projectedTDT = this.projectedHTD * this.hydraMach
+    this.totalWeeklyTreat = this.roundNumber(this.projectedTDT * this.daysOfOp);
     this.treatmentRevenue();
   }
+
+
   treatmentRevenue() {
-    this.percentOfTreatMentBooster = this.percentBoost / 100;
-    console.log('% of treatment' ,this.percentOfTreatMentBooster)
-    this.addRevenue = this.roundNumber(this.totalWeeklyTreat * this.percentOfTreatMentBooster * this.addBooster);
+    this.percentOfTreatmentBooster = this.percentBoost / 100;
+    this.percentOfTreatmentLights = this.percentLight / 100;
+    console.log('% of treatment' ,this.percentOfTreatmentBooster)
+    
+    this.addRevenue = this.roundNumber(this.totalWeeklyTreat * this.percentOfTreatmentBooster * this.addBooster) + this.roundNumber(this.totalWeeklyTreat * this.percentOfTreatmentLights * this.addLights);
+    
     this.weeklyRevAll =
       this.totalWeeklyTreat * this.pricePerTreatment + this.addRevenue;
     this.weekAll = this.numberWithCommas(this.weeklyRevAll.toFixed(2));
@@ -145,13 +161,15 @@ export class HomePage implements OnInit {
     this.averageGPT = this.averageGrossPerTreat.toFixed(2);
     this.investmentReturn();
   }
+
+
   investmentReturn() {
     this.monthlyGrossRev =
-      Math.round(this.weeklyRevWithLift * 4.25 * 100) / 100;
+      Math.round(this.weeklyRevAll * 4.25 * 100) / 100;
     this.monthlyConsumableCost =
       Math.round(
         (this.totalWeeklyTreat * this.consumableCost +
-          this.boosterCost * this.totalWeeklyTreat) *
+          this.boosterCost * this.totalWeeklyTreat * this.percentOfTreatmentBooster) *
           4.25 *
           100
       ) / 100;
