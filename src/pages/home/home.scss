@@ -57,22 +57,29 @@ page-home {
       font-size: 53px;
     }
   } //END HEADER STYLES //////////BEGIN GRID/COLUMN/ROW STYLES/////////////////////
-  ion-list.list.list-ios {
-    margin: 0 !important;
-    .checkbox {
-      margin-right: 8px;
+  div.flex.bold.stack{
+    ion-list.list.list-ios {
+      margin: 0 !important;
+      div.discount {
+        input[type="checkbox"].no-border.checkbox {
+          margin-right: 12px!important;
+        }
+      }
     }
   }
+
   div.discount {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 4vw;
-    margin: 0 auto;
+    height: 3.6vw;
     width: 98%;
     font-size: 1.4vw;
     color: #666666;
     line-height: 1.42vw;
+  }
+  div.discount.checks {
+    margin-right: 8px;
   }
   div.discount.end {
     justify-content: flex-end;
@@ -127,6 +134,16 @@ page-home {
             background-size: 100% 9vw;
             background-repeat: no-repeat;
             background-color: #fff;
+            ion-list-header.item.item-md.list-header.list-header-md,
+            ion-list-header.item.item-ios.list-header.list-header-ios#rg-hdr-0 {
+              margin: 0;
+              padding-left: 0;
+              text-align: start;
+              font-size: 1.35vw;
+              font-weight: 700;
+              text-transform: none;
+            }
+          
             p.obl {
               font-size: .9vw;
               font-style: oblique;
